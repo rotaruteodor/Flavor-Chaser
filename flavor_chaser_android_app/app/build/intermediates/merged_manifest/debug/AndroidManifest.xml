@@ -28,7 +28,8 @@
         android:theme="@style/Theme.FlavorChaserAndroidApp" >
         <activity
             android:name="teodor.flavor_chaser_android_app.activities.MainActivity"
-            android:exported="true" >
+            android:exported="true"
+            android:theme="@style/Theme.FlavorChaserAndroidApp" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">Flavor Chaser</string>
+    <string name="liquid_calculator_tag">Liquid Calculator</string>
+    <string name="recipes_tag">Recipes</string>
+    <string name="flavors_tag">Flavors</string>
+    <string name="social_tag">Social</string>
+    <string name="chat_tag">Chat</string>
+    <string name="friends_tag">Friends</string>
+    <string name="groups_tag">Groups</string>
+    <string name="eliquid_tag">E-liquid</string>
+    <string name="open_navigation_drawer">Open Navigation Drawer</string>
+    <string name="close_navigation_drawer">Close Navigation Drawer</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="base_tag">Base</string>
 </resources>

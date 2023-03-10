@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "teodor.flavor_chaser_android_app-mergeDebugResources-27:/values-w360dp-port-v13/values-w360dp-port-v13.xml",
+            "outputFile": "teodor.flavor_chaser_android_app-mergeDebugResources-28:/values-w360dp-port-v13/values-w360dp-port-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-3\\113dec783198fb148d5bb0a209784fef\\transformed\\material-1.8.0\\res\\values-w360dp-port-v13\\values-w360dp-port-v13.xml",
+                    "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-3\\74dc3758240e6d0c5190807890d7e973\\transformed\\material-1.9.0-alpha02\\res\\values-w360dp-port-v13\\values-w360dp-port-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",

@@ -1,8 +1,9 @@
-#Tue Feb 28 17:14:48 EET 2023
+#Thu Mar 09 21:17:33 EET 2023
 path.4=9/classes.dex
 path.3=11/classes.dex
 path.2=6/classes.dex
 path.1=0/classes.dex
+path.5=4/classes.dex
 path.0=classes.dex
 base.4=C\:\\Users\\HP\\Desktop\\FlavorChaserApp\\flavor_chaser_android_app\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\9\\classes.dex
 base.3=C\:\\Users\\HP\\Desktop\\FlavorChaserApp\\flavor_chaser_android_app\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\11\\classes.dex
@@ -13,4 +14,6 @@ renamed.3=classes4.dex
 renamed.2=classes3.dex
 renamed.1=classes2.dex
 renamed.0=classes.dex
+renamed.5=classes6.dex
 renamed.4=classes5.dex
+base.5=C\:\\Users\\HP\\Desktop\\FlavorChaserApp\\flavor_chaser_android_app\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\4\\classes.dex

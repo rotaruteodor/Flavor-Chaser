@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item android:title="@string/social_tag">
+        <menu>
+            <item
+                android:id="@+id/chatMenuItem"
+                android:icon="@drawable/ic_baseline_smoking_rooms_24"
+                android:title="@string/chat_tag" />
+            <item
+                android:id="@+id/friendsMenuItem"
+                android:icon="@drawable/ic_baseline_smoking_rooms_24"
+                android:title="@string/friends_tag" />
+            <item
+                android:id="@+id/groupsMenuItem"
+                android:icon="@drawable/ic_baseline_smoking_rooms_24"
+                android:title="@string/groups_tag" />
+        </menu>
+    </item>
+
+    <item android:title="@string/eliquid_tag">
+        <menu>
+            <item
+                android:id="@+id/liquidCalculatorMenuItem"
+                android:icon="@drawable/ic_baseline_smoking_rooms_24"
+                android:title="@string/liquid_calculator_tag" />
+            <item
+                android:id="@+id/recipesMenuItem"
+                android:icon="@drawable/ic_launcher_background"
+                android:title="@string/recipes_tag" />
+            <item
+                android:id="@+id/flavorsMenuItem"
+                android:icon="@drawable/ic_launcher_background"
+                android:title="@string/flavors_tag" />
+        </menu>
+    </item>
+
+</menu>
