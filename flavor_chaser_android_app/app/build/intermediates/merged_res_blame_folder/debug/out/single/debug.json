@@ -8,6 +8,10 @@
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.4\\teodor.flavor_chaser_android_app-pngs-25:\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
     },
     {
+        "merged": "teodor.flavor_chaser_android_app-merged_res-30:/layout_fragment_eliquid_calculator.xml.flat",
+        "source": "teodor.flavor_chaser_android_app-main-32:/layout/fragment_eliquid_calculator.xml"
+    },
+    {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.4\\teodor.flavor_chaser_android_app-merged_res-30:\\menu_navigation_drawer.xml.flat",
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.4\\teodor.flavor_chaser_android_app-main-32:\\menu\\navigation_drawer.xml"
     },
@@ -24,16 +28,16 @@
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.4\\teodor.flavor_chaser_android_app-main-32:\\layout\\activity_main.xml"
     },
     {
-        "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.4\\teodor.flavor_chaser_android_app-merged_res-30:\\layout_testttt.xml.flat",
-        "source": "C:\\Users\\HP\\.gradle\\daemon\\7.4\\teodor.flavor_chaser_android_app-main-32:\\layout\\testttt.xml"
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.4\\teodor.flavor_chaser_android_app-merged_res-30:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\7.4\\teodor.flavor_chaser_android_app-main-32:\\mipmap-xhdpi\\ic_launcher.webp"
     },
     {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.4\\teodor.flavor_chaser_android_app-merged_res-30:\\mipmap-mdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.4\\teodor.flavor_chaser_android_app-main-32:\\mipmap-mdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.4\\teodor.flavor_chaser_android_app-merged_res-30:\\mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\HP\\.gradle\\daemon\\7.4\\teodor.flavor_chaser_android_app-main-32:\\mipmap-xhdpi\\ic_launcher.webp"
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.4\\teodor.flavor_chaser_android_app-merged_res-30:\\layout_testttt.xml.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\7.4\\teodor.flavor_chaser_android_app-main-32:\\layout\\testttt.xml"
     },
     {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.4\\teodor.flavor_chaser_android_app-merged_res-30:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
@@ -42,6 +46,10 @@
     {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.4\\teodor.flavor_chaser_android_app-merged_res-30:\\font_russo_one.ttf.flat",
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.4\\teodor.flavor_chaser_android_app-main-32:\\font\\russo_one.ttf"
+    },
+    {
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.4\\teodor.flavor_chaser_android_app-merged_res-30:\\drawable_borders.xml.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\7.4\\teodor.flavor_chaser_android_app-main-32:\\drawable\\borders.xml"
     },
     {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.4\\teodor.flavor_chaser_android_app-merged_res-30:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
@@ -66,6 +74,10 @@
     {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.4\\teodor.flavor_chaser_android_app-merged_res-30:\\drawable_ic_baseline_add_36.xml.flat",
         "source": "C:\\Users\\HP\\.gradle\\daemon\\7.4\\teodor.flavor_chaser_android_app-main-32:\\drawable\\ic_baseline_add_36.xml"
+    },
+    {
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.4\\teodor.flavor_chaser_android_app-merged_res-30:\\layout_textview_recipe_results_component.xml.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\7.4\\teodor.flavor_chaser_android_app-main-32:\\layout\\textview_recipe_results_component.xml"
     },
     {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.4\\teodor.flavor_chaser_android_app-merged_res-30:\\mipmap-hdpi_ic_launcher_round.webp.flat",
@@ -98,6 +110,10 @@
     {
         "merged": "teodor.flavor_chaser_android_app-merged_res-30:/layout_flavor_recipe_component_layout.xml.flat",
         "source": "teodor.flavor_chaser_android_app-main-32:/layout/flavor_recipe_component_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.4\\teodor.flavor_chaser_android_app-merged_res-30:\\drawable_white_rectangle_border_1dp.xml.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\7.4\\teodor.flavor_chaser_android_app-main-32:\\drawable\\white_rectangle_border_1dp.xml"
     },
     {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\7.4\\teodor.flavor_chaser_android_app-merged_res-30:\\layout_flavor_recipe_component_layout.xml.flat",

@@ -1,269 +1,462 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/very_dark_green"
-    tools:context=".fragments.EliquidCalculatorFragment">
+    android:fillViewport="true"
+    android:orientation="vertical"
+    tools:layout_editor_absoluteX="1dp"
+    tools:layout_editor_absoluteY="226dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayoutCalculatorFragBase"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:background="@color/grey"
+        tools:context=".fragments.EliquidCalculatorFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayoutCalculatorFragBase"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/textviewCalculatorFragBaseTag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/russo_one"
+                android:text="@string/base_tag"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@id/edittextCalculatorBaseVG"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/edittextCalculatorBaseVG" />
+
+            <TextView
+                android:id="@+id/textviewCalculatorFragBaseVGTag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/russo_one"
+                android:text="VG %"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@id/edittextCalculatorBaseVG"
+                app:layout_constraintEnd_toEndOf="@id/edittextCalculatorBaseVG"
+                app:layout_constraintStart_toStartOf="@id/edittextCalculatorBaseVG"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/edittextCalculatorBaseVG"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/edittext_main_drawable"
+                android:fontFamily="@font/russo_one"
+                android:gravity="center"
+                android:inputType="numberDecimal"
+                android:text="70"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                app:layout_constraintEnd_toStartOf="@id/edittextCalculatorBasePG"
+                app:layout_constraintStart_toEndOf="@id/textviewCalculatorFragBaseTag"
+                app:layout_constraintTop_toBottomOf="@id/textviewCalculatorFragBaseVGTag" />
+
+            <TextView
+                android:id="@+id/textviewCalculatorFragBasePGTag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/russo_one"
+                android:text="PG %"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@id/edittextCalculatorBasePG"
+                app:layout_constraintEnd_toEndOf="@id/edittextCalculatorBasePG"
+                app:layout_constraintStart_toStartOf="@id/edittextCalculatorBasePG"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/edittextCalculatorBasePG"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/edittext_main_drawable"
+                android:fontFamily="@font/russo_one"
+                android:gravity="center"
+                android:inputType="numberDecimal"
+                android:text="30"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/edittextCalculatorBaseVG"
+                app:layout_constraintTop_toBottomOf="@id/textviewCalculatorFragBasePGTag" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
-            android:id="@+id/textviewCalculatorFragBaseTag"
+            android:id="@+id/textviewCalculatorFragIndividualVgPgTag"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
             android:fontFamily="@font/russo_one"
-            android:text="@string/base_tag"
+            android:text="*I have separate VG and PG as base"
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/constraintLayoutCalculatorFragBase"
+            app:layout_goneMarginStart="16dp" />
+
+        <CheckBox
+            android:id="@+id/checkboxIndividualPgVg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/textviewCalculatorFragIndividualVgPgTag"
+            app:layout_constraintStart_toEndOf="@id/textviewCalculatorFragIndividualVgPgTag"
+            app:layout_constraintTop_toTopOf="@id/textviewCalculatorFragIndividualVgPgTag" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayoutCalculatorFragNicshot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textviewCalculatorFragIndividualVgPgTag">
+
+            <TextView
+                android:id="@+id/textviewCalculatorFragNicotineTag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/russo_one"
+                android:text="Nicotine"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@id/edittextCalculatorNicotineVG"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/edittextCalculatorNicotineVG" />
+
+            <TextView
+                android:id="@+id/textviewCalculatorFragNicotineVGTag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/russo_one"
+                android:text="VG %"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@id/edittextCalculatorNicotineVG"
+                app:layout_constraintEnd_toEndOf="@id/edittextCalculatorNicotineVG"
+                app:layout_constraintStart_toStartOf="@id/edittextCalculatorNicotineVG"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/edittextCalculatorNicotineVG"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/edittext_main_drawable"
+                android:fontFamily="@font/russo_one"
+                android:gravity="center"
+                android:inputType="numberDecimal"
+                android:text="70"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                app:layout_constraintEnd_toStartOf="@id/edittextCalculatorNicotinePG"
+                app:layout_constraintStart_toEndOf="@id/textviewCalculatorFragNicotineTag"
+                app:layout_constraintTop_toBottomOf="@id/textviewCalculatorFragNicotineVGTag" />
+
+            <TextView
+                android:id="@+id/textviewCalculatorFragNicotinePGTag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/russo_one"
+                android:text="PG %"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@id/edittextCalculatorNicotinePG"
+                app:layout_constraintEnd_toEndOf="@id/edittextCalculatorNicotinePG"
+                app:layout_constraintStart_toStartOf="@id/edittextCalculatorNicotinePG"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/edittextCalculatorNicotinePG"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/edittext_main_drawable"
+                android:fontFamily="@font/russo_one"
+                android:gravity="center"
+                android:inputType="numberDecimal"
+                android:text="30"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                app:layout_constraintEnd_toStartOf="@id/edittextCalculatorNicotineMg"
+                app:layout_constraintStart_toEndOf="@id/edittextCalculatorNicotineVG"
+                app:layout_constraintTop_toBottomOf="@id/textviewCalculatorFragNicotinePGTag" />
+
+            <TextView
+                android:id="@+id/textviewCalculatorFragNicotineMgTag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/russo_one"
+                android:text="mg/ml"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@id/edittextCalculatorNicotineMg"
+                app:layout_constraintEnd_toEndOf="@id/edittextCalculatorNicotineMg"
+                app:layout_constraintStart_toStartOf="@id/edittextCalculatorNicotineMg"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/edittextCalculatorNicotineMg"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/edittext_main_drawable"
+                android:fontFamily="@font/russo_one"
+                android:gravity="center"
+                android:inputType="numberDecimal"
+                android:text="20"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/edittextCalculatorNicotinePG"
+                app:layout_constraintTop_toBottomOf="@id/textviewCalculatorFragNicotineMgTag" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/textviewCalculatorFragFlavorsTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="25dp"
+            android:fontFamily="@font/russo_one"
+            android:text="Flavors"
             android:textColor="@color/white"
             android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="@id/edittextCalculatorBaseVG"
+            app:layout_constraintBottom_toTopOf="@id/linearLayoutCalculatorFragFlavors"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/edittextCalculatorBaseVG" />
+            app:layout_constraintTop_toBottomOf="@id/constraintLayoutCalculatorFragNicshot" />
 
-        <TextView
-            android:id="@+id/textviewCalculatorFragBaseVGTag"
+        <ImageButton
+            android:id="@+id/imgButtonAddRecipeFlavor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:fontFamily="@font/russo_one"
-            android:text="VG %"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toTopOf="@id/edittextCalculatorBaseVG"
-            app:layout_constraintEnd_toEndOf="@id/edittextCalculatorBaseVG"
-            app:layout_constraintStart_toStartOf="@id/edittextCalculatorBaseVG"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <EditText
-            android:id="@+id/edittextCalculatorBaseVG"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:background="@drawable/edittext_main_drawable"
-            android:fontFamily="@font/russo_one"
-            android:gravity="center"
-            android:inputType="numberDecimal"
-            android:text="70"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
-            app:layout_constraintEnd_toStartOf="@id/edittextCalculatorBasePG"
-            app:layout_constraintStart_toEndOf="@id/textviewCalculatorFragBaseTag"
-            app:layout_constraintTop_toBottomOf="@id/textviewCalculatorFragBaseVGTag" />
+            android:background="@drawable/add_button_drawable"
+            android:backgroundTint="@color/main_transparent_white"
+            android:padding="0dp"
+            android:src="@drawable/ic_baseline_add_36"
+            app:layout_constraintBottom_toBottomOf="@id/textviewCalculatorFragFlavorsTag"
+            app:layout_constraintStart_toEndOf="@id/textviewCalculatorFragFlavorsTag"
+            app:layout_constraintTop_toTopOf="@id/textviewCalculatorFragFlavorsTag" />
 
-        <TextView
-            android:id="@+id/textviewCalculatorFragBasePGTag"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/linearLayoutCalculatorFragFlavors"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:fontFamily="@font/russo_one"
-            android:text="PG %"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toTopOf="@id/edittextCalculatorBasePG"
-            app:layout_constraintEnd_toEndOf="@id/edittextCalculatorBasePG"
-            app:layout_constraintStart_toStartOf="@id/edittextCalculatorBasePG"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <EditText
-            android:id="@+id/edittextCalculatorBasePG"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:background="@drawable/edittext_main_drawable"
-            android:fontFamily="@font/russo_one"
-            android:gravity="center"
-            android:inputType="numberDecimal"
-            android:text="30"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
+            android:layout_marginTop="32dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@id/textviewCalculatorFinalAmountTag"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/edittextCalculatorBaseVG"
-            app:layout_constraintTop_toBottomOf="@id/textviewCalculatorFragBasePGTag" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <TextView
-        android:id="@+id/textviewCalculatorFragIndividualVgPgTag"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:fontFamily="@font/russo_one"
-        android:text="*I have separate VG and PG as base"
-        android:textColor="@color/white"
-        android:textSize="13sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/constraintLayoutCalculatorFragBase"
-        app:layout_goneMarginStart="16dp" />
-
-    <CheckBox
-        android:id="@+id/checkboxIndividualPgVg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@id/textviewCalculatorFragIndividualVgPgTag"
-        app:layout_constraintStart_toEndOf="@id/textviewCalculatorFragIndividualVgPgTag"
-        app:layout_constraintTop_toTopOf="@id/textviewCalculatorFragIndividualVgPgTag" />
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayoutCalculatorFragNicshot"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textviewCalculatorFragIndividualVgPgTag">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textviewCalculatorFragFlavorsTag" />
 
         <TextView
-            android:id="@+id/textviewCalculatorFragNicotineTag"
+            android:id="@+id/textviewCalculatorFinalAmountTag"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
+            android:layout_marginTop="25dp"
             android:fontFamily="@font/russo_one"
-            android:text="Nicotine"
+            android:text="Final amount"
             android:textColor="@color/white"
             android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="@id/edittextCalculatorNicotineVG"
+            app:layout_constraintEnd_toStartOf="@id/editTextCalculatorFinalAmount"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/edittextCalculatorNicotineVG" />
+            app:layout_constraintTop_toBottomOf="@id/linearLayoutCalculatorFragFlavors" />
 
-        <TextView
-            android:id="@+id/textviewCalculatorFragNicotineVGTag"
+
+        <com.tobiasschuerg.prefixsuffix.PrefixSuffixEditText
+            android:id="@+id/editTextCalculatorFinalAmount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:fontFamily="@font/russo_one"
-            android:text="VG %"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toTopOf="@id/edittextCalculatorNicotineVG"
-            app:layout_constraintEnd_toEndOf="@id/edittextCalculatorNicotineVG"
-            app:layout_constraintStart_toStartOf="@id/edittextCalculatorNicotineVG"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <EditText
-            android:id="@+id/edittextCalculatorNicotineVG"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
+            android:layout_margin="8dp"
             android:background="@drawable/edittext_main_drawable"
             android:fontFamily="@font/russo_one"
-            android:gravity="center"
             android:inputType="numberDecimal"
-            android:text="70"
+            android:paddingHorizontal="35dp"
+            android:paddingVertical="10dp"
+            android:text="10"
             android:textColor="@color/white"
             android:textColorHint="@color/white"
-            app:layout_constraintEnd_toStartOf="@id/edittextCalculatorNicotinePG"
-            app:layout_constraintStart_toEndOf="@id/textviewCalculatorFragNicotineTag"
-            app:layout_constraintTop_toBottomOf="@id/textviewCalculatorFragNicotineVGTag" />
-
-        <TextView
-            android:id="@+id/textviewCalculatorFragNicotinePGTag"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:fontFamily="@font/russo_one"
-            android:text="PG %"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toTopOf="@id/edittextCalculatorNicotinePG"
-            app:layout_constraintEnd_toEndOf="@id/edittextCalculatorNicotinePG"
-            app:layout_constraintStart_toStartOf="@id/edittextCalculatorNicotinePG"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <EditText
-            android:id="@+id/edittextCalculatorNicotinePG"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:background="@drawable/edittext_main_drawable"
-            android:fontFamily="@font/russo_one"
-            android:gravity="center"
-            android:inputType="numberDecimal"
-            android:text="30"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
-            app:layout_constraintEnd_toStartOf="@id/edittextCalculatorNicotineMg"
-            app:layout_constraintStart_toEndOf="@id/edittextCalculatorNicotineVG"
-            app:layout_constraintTop_toBottomOf="@id/textviewCalculatorFragNicotinePGTag" />
-
-        <TextView
-            android:id="@+id/textviewCalculatorFragNicotineMgTag"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:fontFamily="@font/russo_one"
-            android:text="mg/ml"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toTopOf="@id/edittextCalculatorNicotineMg"
-            app:layout_constraintEnd_toEndOf="@id/edittextCalculatorNicotineMg"
-            app:layout_constraintStart_toStartOf="@id/edittextCalculatorNicotineMg"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <EditText
-            android:id="@+id/edittextCalculatorNicotineMg"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:background="@drawable/edittext_main_drawable"
-            android:fontFamily="@font/russo_one"
-            android:gravity="center"
-            android:inputType="numberDecimal"
-            android:text="20"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/textviewCalculatorFinalAmountTag"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/edittextCalculatorNicotinePG"
-            app:layout_constraintTop_toBottomOf="@id/textviewCalculatorFragNicotineMgTag" />
+            app:layout_constraintStart_toEndOf="@id/textviewCalculatorFinalAmountTag"
+            app:layout_constraintTop_toTopOf="@id/textviewCalculatorFinalAmountTag"
+            app:suffix=" ml" />
+
+
+        <TextView
+            android:id="@+id/textviewCalculatorDesiredNicotineStrengthTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="25dp"
+            android:fontFamily="@font/russo_one"
+            android:text="Nicotine strength"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@id/editTextCalculatorDesiredNicotineStrength"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textviewCalculatorFinalAmountTag" />
+
+
+        <com.tobiasschuerg.prefixsuffix.PrefixSuffixEditText
+            android:id="@+id/editTextCalculatorDesiredNicotineStrength"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@drawable/edittext_main_drawable"
+            android:fontFamily="@font/russo_one"
+            android:inputType="numberDecimal"
+            android:paddingHorizontal="35dp"
+            android:paddingVertical="10dp"
+            android:text="6"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/textviewCalculatorDesiredNicotineStrengthTag"
+            app:layout_constraintEnd_toEndOf="@id/editTextCalculatorFinalAmount"
+            app:layout_constraintStart_toStartOf="@id/editTextCalculatorFinalAmount"
+            app:layout_constraintTop_toTopOf="@id/textviewCalculatorDesiredNicotineStrengthTag"
+            app:suffix=" mg" />
+
+        <View
+            android:id="@+id/viewCalculatorHorizontalLineBeforeResults"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="24dp"
+            android:background="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/editTextCalculatorDesiredNicotineStrength" />
+
+        <Button
+            android:id="@+id/buttonCalculateRecipeResults"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="@color/very_transparent_white"
+            android:fontFamily="@font/russo_one"
+            android:gravity="center"
+            android:text="CALCULATE"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viewCalculatorHorizontalLineBeforeResults" />
+
+
+        <TableLayout
+            android:id="@+id/tableLayoutRecipeResults"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="24dp"
+            android:shrinkColumns="0"
+            android:stretchColumns="*"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/buttonCalculateRecipeResults"
+            app:layout_constraintVertical_bias="0.0">
+
+            <TableRow
+                android:id="@+id/tableRowRecipeResultsHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/very_transparent_white">
+
+                <TextView
+                    android:id="@+id/textviewIngredientNameTableHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/white_rectangle_border_1dp"
+                    android:fontFamily="@font/russo_one"
+                    android:padding="5dp"
+                    android:text="Ingredient"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/textviewMillilitersTableHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/white_rectangle_border_1dp"
+                    android:fontFamily="@font/russo_one"
+                    android:padding="5dp"
+                    android:text="ml"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/textviewGramsTableHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/white_rectangle_border_1dp"
+                    android:fontFamily="@font/russo_one"
+                    android:padding="5dp"
+                    android:text="grams"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/textviewPercentageOfTotalTableHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/white_rectangle_border_1dp"
+                    android:fontFamily="@font/russo_one"
+                    android:padding="5dp"
+                    android:text="%"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/textviewCostTableHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/white_rectangle_border_1dp"
+                    android:fontFamily="@font/russo_one"
+                    android:padding="5dp"
+                    android:text="Cost"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+
+            </TableRow>
+
+        </TableLayout>
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <TextView
-        android:id="@+id/textviewCalculatorFragFlavorsTag"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="25dp"
-        android:fontFamily="@font/russo_one"
-        android:text="Flavors"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@id/linearLayoutCalculatorFragFlavors"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/constraintLayoutCalculatorFragNicshot" />
-
-    <LinearLayout
-        android:id="@+id/linearLayoutCalculatorFragFlavors"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textviewCalculatorFragFlavorsTag"/>
-
-    <ImageButton
-        android:id="@+id/imgButtonAddRecipeFlavor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/linearLayoutCalculatorFragFlavors"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="16dp"
-        android:padding="0dp"
-        android:src="@drawable/ic_baseline_add_36"
-        android:backgroundTint="@color/test"
-        android:background="@drawable/add_button_drawable"
-        />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -3020,6 +3020,7 @@ drawable notify_panel_notification_icon_bg
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable white_rectangle_border_1dp
 font russo_one
 id ALT
 id BOTTOM_END
@@ -3120,6 +3121,7 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
+id buttonCalculateRecipeResults
 id buttonPanel
 id cache_measures
 id callMeasure
@@ -3198,6 +3200,8 @@ id easeInOut
 id easeOut
 id east
 id edge
+id editTextCalculatorDesiredNicotineStrength
+id editTextCalculatorFinalAmount
 id editTextRecipeFlavorPercentage
 id edit_query
 id edittextCalculatorBasePG
@@ -3469,6 +3473,8 @@ id submenuarrow
 id submit_area
 id supportScrollUp
 id tabMode
+id tableLayoutRecipeResults
+id tableRowRecipeResultsHeader
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans
 id tag_accessibility_heading
@@ -3498,6 +3504,8 @@ id textinput_helper_text
 id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
+id textviewCalculatorDesiredNicotineStrengthTag
+id textviewCalculatorFinalAmountTag
 id textviewCalculatorFragBasePGTag
 id textviewCalculatorFragBaseTag
 id textviewCalculatorFragBaseVGTag
@@ -3507,7 +3515,12 @@ id textviewCalculatorFragNicotineMgTag
 id textviewCalculatorFragNicotinePGTag
 id textviewCalculatorFragNicotineTag
 id textviewCalculatorFragNicotineVGTag
+id textviewCostTableHeader
+id textviewGramsTableHeader
+id textviewIngredientNameTableHeader
+id textviewMillilitersTableHeader
 id textviewNavigationDrawerUsername
+id textviewPercentageOfTotalTableHeader
 id time
 id title
 id titleDividerNoCustom
@@ -3531,6 +3544,7 @@ id unlabeled
 id up
 id useLogo
 id vertical_only
+id viewCalculatorHorizontalLineBeforeResults
 id view_offset_helper
 id view_transition
 id view_tree_lifecycle_owner
@@ -3742,6 +3756,7 @@ layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
+layout textview_recipe_results_component
 menu navigation_drawer
 mipmap ic_launcher
 mipmap ic_launcher_round
@@ -3798,7 +3813,6 @@ string fab_transformation_sheet_behavior
 string flavors_tag
 string friends_tag
 string groups_tag
-string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
 string item_view_role_description
@@ -3908,6 +3922,7 @@ string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
+string recipe_results_tag
 string recipes_tag
 string search_menu_title
 string searchbar_scrolling_view_behavior

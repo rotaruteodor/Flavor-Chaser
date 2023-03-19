@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/very_dark_green">
+    android:background="@color/grey">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineVertical"
@@ -17,12 +17,12 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:fontFamily="@font/russo_one"
         android:gravity="center"
         android:hint="Search for a flavor"
-        android:textColorHint="@color/white"
         android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:textSize="16sp"
+        android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/guidelineVertical"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,8 +35,9 @@
         android:layout_margin="8dp"
         android:background="@drawable/edittext_main_drawable"
         android:fontFamily="@font/russo_one"
-        android:gravity="center"
         android:inputType="numberDecimal"
+        android:paddingVertical="10dp"
+        android:paddingHorizontal="20dp"
         android:text="0"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
