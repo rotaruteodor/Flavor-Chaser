@@ -355,17 +355,17 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/editTextCalculatorDesiredNicotineStrength" />
 
-        <Button
-            android:id="@+id/buttonCalculateRecipeResults"
+        <TextView
+            android:id="@+id/textviewCalculateRecipeResultsError"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:backgroundTint="@color/very_transparent_white"
             android:fontFamily="@font/russo_one"
+            android:visibility="gone"
             android:gravity="center"
-            android:text="CALCULATE"
-            android:textColor="@color/white"
-            android:textSize="18sp"
+            android:text="Something is wrong with your inputs"
+            android:textColor="@color/error_red"
+            android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/viewCalculatorHorizontalLineBeforeResults" />
@@ -383,7 +383,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/buttonCalculateRecipeResults"
+            app:layout_constraintTop_toBottomOf="@id/textviewCalculateRecipeResultsError"
             app:layout_constraintVertical_bias="0.0">
 
             <TableRow

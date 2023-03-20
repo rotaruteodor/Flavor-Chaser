@@ -34,7 +34,6 @@ drawable ic_launcher_foreground
 drawable white_rectangle_border_1dp
 font russo_one
 id autoCompleteTextViewFlavorName
-id buttonCalculateRecipeResults
 id chatMenuItem
 id checkboxIndividualPgVg
 id constraintLayoutCalculatorFragBase
@@ -61,6 +60,7 @@ id navigationView
 id recipesMenuItem
 id tableLayoutRecipeResults
 id tableRowRecipeResultsHeader
+id textviewCalculateRecipeResultsError
 id textviewCalculatorDesiredNicotineStrengthTag
 id textviewCalculatorFinalAmountTag
 id textviewCalculatorFragBasePGTag

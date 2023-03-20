@@ -3121,7 +3121,6 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
-id buttonCalculateRecipeResults
 id buttonPanel
 id cache_measures
 id callMeasure
@@ -3504,6 +3503,7 @@ id textinput_helper_text
 id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
+id textviewCalculateRecipeResultsError
 id textviewCalculatorDesiredNicotineStrengthTag
 id textviewCalculatorFinalAmountTag
 id textviewCalculatorFragBasePGTag

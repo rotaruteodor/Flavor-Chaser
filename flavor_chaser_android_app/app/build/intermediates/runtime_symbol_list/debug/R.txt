@@ -3120,7 +3120,6 @@ int id bounce 0x7f09005f
 int id bounceBoth 0x7f090060
 int id bounceEnd 0x7f090061
 int id bounceStart 0x7f090062
-int id buttonCalculateRecipeResults 0x7f090063
 int id buttonPanel 0x7f090064
 int id cache_measures 0x7f090065
 int id callMeasure 0x7f090066
@@ -3503,6 +3502,7 @@ int id textinput_helper_text 0x7f0901de
 int id textinput_placeholder 0x7f0901df
 int id textinput_prefix_text 0x7f0901e0
 int id textinput_suffix_text 0x7f0901e1
+int id textviewCalculateRecipeResultsError 0x7f09021c
 int id textviewCalculatorDesiredNicotineStrengthTag 0x7f0901e2
 int id textviewCalculatorFinalAmountTag 0x7f0901e3
 int id textviewCalculatorFragBasePGTag 0x7f0901e4
