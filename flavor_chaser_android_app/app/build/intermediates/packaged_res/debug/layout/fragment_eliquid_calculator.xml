@@ -12,7 +12,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/grey"
+        android:background="@color/light_black"
         tools:context=".fragments.EliquidCalculatorFragment">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -290,7 +290,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/linearLayoutCalculatorFragFlavors" />
 
-
         <com.tobiasschuerg.prefixsuffix.PrefixSuffixEditText
             android:id="@+id/editTextCalculatorFinalAmount"
             android:layout_width="wrap_content"
@@ -310,7 +309,6 @@
             app:layout_constraintTop_toTopOf="@id/textviewCalculatorFinalAmountTag"
             app:suffix=" ml" />
 
-
         <TextView
             android:id="@+id/textviewCalculatorDesiredNicotineStrengthTag"
             android:layout_width="wrap_content"
@@ -324,7 +322,6 @@
             app:layout_constraintEnd_toStartOf="@id/editTextCalculatorDesiredNicotineStrength"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/textviewCalculatorFinalAmountTag" />
-
 
         <com.tobiasschuerg.prefixsuffix.PrefixSuffixEditText
             android:id="@+id/editTextCalculatorDesiredNicotineStrength"
@@ -345,6 +342,25 @@
             app:layout_constraintTop_toTopOf="@id/textviewCalculatorDesiredNicotineStrengthTag"
             app:suffix=" mg" />
 
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonSaveRecipe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/very_transparent_white"
+            android:drawableStart="@drawable/ic_baseline_save_24"
+            android:drawablePadding="10dp"
+            android:fontFamily="@font/russo_one"
+            android:text="Save Recipe"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@id/viewCalculatorHorizontalLineBeforeResults"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/editTextCalculatorDesiredNicotineStrength" />
+
+
+
         <View
             android:id="@+id/viewCalculatorHorizontalLineBeforeResults"
             android:layout_width="0dp"
@@ -353,7 +369,7 @@
             android:background="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/editTextCalculatorDesiredNicotineStrength" />
+            app:layout_constraintTop_toBottomOf="@id/buttonSaveRecipe" />
 
         <TextView
             android:id="@+id/textviewCalculateRecipeResultsError"
@@ -361,15 +377,14 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:fontFamily="@font/russo_one"
-            android:visibility="gone"
             android:gravity="center"
             android:text="Something is wrong with your inputs"
             android:textColor="@color/error_red"
             android:textSize="12sp"
+            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/viewCalculatorHorizontalLineBeforeResults" />
-
 
         <TableLayout
             android:id="@+id/tableLayoutRecipeResults"
@@ -451,12 +466,7 @@
                     android:textAlignment="center"
                     android:textColor="@color/white"
                     android:textSize="14sp" />
-
-
             </TableRow>
-
         </TableLayout>
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

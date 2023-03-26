@@ -12,4 +12,5 @@
     <string name="close_navigation_drawer">Close Navigation Drawer</string>
     <string name="recipe_results_tag"><u>RESULTS</u></string>
     <string name="base_tag">Base</string>
+    <string name="profile_tag">Profile</string>
 </resources>

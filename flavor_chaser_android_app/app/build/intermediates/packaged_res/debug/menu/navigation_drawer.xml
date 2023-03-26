@@ -3,19 +3,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
+    <item
+        android:id="@+id/userProfileMenuItem"
+        android:icon="@drawable/ic_baseline_account_circle_24"
+        android:title="@string/profile_tag" />
+
     <item android:title="@string/social_tag">
         <menu>
             <item
                 android:id="@+id/chatMenuItem"
-                android:icon="@drawable/ic_baseline_smoking_rooms_24"
+                android:icon="@drawable/chat_conversation_circle_svgrepo_com"
                 android:title="@string/chat_tag" />
             <item
                 android:id="@+id/friendsMenuItem"
-                android:icon="@drawable/ic_baseline_smoking_rooms_24"
+                android:icon="@drawable/friends_icon"
                 android:title="@string/friends_tag" />
             <item
                 android:id="@+id/groupsMenuItem"
-                android:icon="@drawable/ic_baseline_smoking_rooms_24"
+                android:icon="@drawable/groups_icon"
                 android:title="@string/groups_tag" />
         </menu>
     </item>
@@ -24,15 +29,15 @@
         <menu>
             <item
                 android:id="@+id/liquidCalculatorMenuItem"
-                android:icon="@drawable/ic_baseline_smoking_rooms_24"
+                android:icon="@drawable/vape_mod_and_bottle_icon"
                 android:title="@string/liquid_calculator_tag" />
             <item
                 android:id="@+id/recipesMenuItem"
-                android:icon="@drawable/ic_launcher_background"
+                android:icon="@drawable/recipe_book_icon"
                 android:title="@string/recipes_tag" />
             <item
                 android:id="@+id/flavorsMenuItem"
-                android:icon="@drawable/ic_launcher_background"
+                android:icon="@drawable/flavors_bowl_icon"
                 android:title="@string/flavors_tag" />
         </menu>
     </item>
