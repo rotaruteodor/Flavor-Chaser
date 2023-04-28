@@ -1,5 +1,6 @@
 package teodor.flavor_chaser_spring_backend.entities;
 
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,15 +12,18 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 @Entity
-@Table(name = "ratings")
-public class Rating {
+@Table(name = "recipe_flavors")
+public class RecipeFlavor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "number_of_stars")
-    private Float numberOfStars;
+    @ManyToOne(targetEntity = Flavor.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "flavor_id")
+    private Flavor flavor;
 
+    @Column(name = "percentage")
+    private Double percentage;
 
 }

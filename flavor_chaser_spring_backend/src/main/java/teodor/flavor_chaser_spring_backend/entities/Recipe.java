@@ -1,5 +1,6 @@
 package teodor.flavor_chaser_spring_backend.entities;
 
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -13,8 +14,8 @@ import java.util.List;
 @NoArgsConstructor
 @Builder
 @Entity
-@Table(name = "flavors")
-public class Flavor {
+@Table(name = "recipes")
+public class Recipe {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,20 +27,15 @@ public class Flavor {
     @Column(name = "description")
     private String description;
 
-    @ManyToOne(targetEntity = Company.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "company_id")
-    private Company company;
+    @ManyToOne(targetEntity = User.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_id")
+    private User user;
 
-    @ManyToOne(targetEntity = FlavorCategory.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "flavor_category_id")
-    private FlavorCategory category;
-
-    @ManyToOne(targetEntity = FlavorWarning.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "flavor_warning_id")
-    private FlavorWarning warning;
+    @OneToMany(targetEntity = RecipeFlavor.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "recipe_id")
+    private List<RecipeFlavor> flavors;
 
     @OneToMany(targetEntity = Rating.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "flavor_id")
+    @JoinColumn(name = "recipe_id")
     private List<Rating> ratings;
-
 }
