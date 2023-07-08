@@ -5,12 +5,47 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff98a4fd-f8f8-43cb-a842-b60201063a5e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/src/main/java/teodor/flavor_chaser_android_app/retrofit/EntitiesApi/RecipeApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/.gradle/7.4/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/.gradle/7.4/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/.gradle/7.4/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/.gradle/7.4/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/.gradle/7.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/.gradle/7.4/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/.gradle/7.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/.gradle/7.4/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/src/main/java/teodor/flavor_chaser_android_app/activities/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/src/main/java/teodor/flavor_chaser_android_app/activities/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/src/main/java/teodor/flavor_chaser_android_app/classes/NumberInputFilterMinMax.java" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/src/main/java/teodor/flavor_chaser_android_app/utils/NumberInputFilterMinMax.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/src/main/java/teodor/flavor_chaser_android_app/fragments/EliquidCalculatorFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/src/main/java/teodor/flavor_chaser_android_app/fragments/EliquidCalculatorFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/entities/Flavor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/entities/Flavor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/entities/FlavorWarning.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/entities/FlavorWarning.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/entities/Rating$RatingBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/entities/Rating$RatingBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/entities/Rating.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/entities/Rating.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/entities/Recipe$RecipeBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/entities/Recipe$RecipeBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/entities/Recipe.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/entities/Recipe.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/entities/User$UserBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/entities/User$UserBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/entities/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/entities/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/Recipe$RecipeBuilder.class.uniqueId5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/Recipe.class.uniqueId4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/RecipeFlavor$RecipeFlavorBuilder.class.uniqueId0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/RecipeFlavor.class.uniqueId1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/User$UserBuilder.class.uniqueId2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/User.class.uniqueId3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/entities/Rating.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/entities/Rating.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/entities/Recipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/entities/Recipe.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/entities/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -26,8 +61,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -50,11 +86,21 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/HP/Desktop/FlavorChaserApp/flavor_chaser_spring_backend/src/main/java/teodor/flavor_chaser_spring_backend/exceptions&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\HP\Desktop\FlavorChaserApp\flavor_chaser_spring_backend\src\main\java\teodor\flavor_chaser_spring_backend\exceptions" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="teodor.flavor_chaser_spring_backend.dtos" />
+      <recent name="teodor.flavor_chaser_spring_backend.handlers" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -76,5 +122,203 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
+          <line>56</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
+          <line>57</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
+          <line>58</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
+          <line>59</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
+          <line>63</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
+          <line>64</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
+          <line>66</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
+          <line>61</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
+          <line>68</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
+          <line>69</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
+          <line>71</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
+          <line>72</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
+          <line>73</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
+          <line>74</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
+          <line>76</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
+          <line>77</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
+          <line>79</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
+          <line>80</line>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
+          <line>75</line>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
+          <line>67</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
+          <line>41</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
+          <line>47</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
+          <line>48</line>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
+          <line>49</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
+          <line>38</line>
+          <properties class="teodor.flavor_chaser_spring_backend.services.FlavorService" method="getAll">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
+          <line>45</line>
+          <properties class="teodor.flavor_chaser_spring_backend.services.FlavorService" method="getById">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

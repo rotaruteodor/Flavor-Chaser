@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import teodor.flavor_chaser_spring_backend.entities.enums.UserRecipeRelation;
 
 import java.util.List;
 
@@ -27,13 +28,9 @@ public class Recipe {
     @Column(name = "description")
     private String description;
 
-    @ManyToOne(targetEntity = User.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id")
-    private User user;
-
     @OneToMany(targetEntity = RecipeFlavor.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "recipe_id")
-    private List<RecipeFlavor> flavors;
+    private List<RecipeFlavor> recipeFlavors;
 
     @OneToMany(targetEntity = Rating.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "recipe_id")

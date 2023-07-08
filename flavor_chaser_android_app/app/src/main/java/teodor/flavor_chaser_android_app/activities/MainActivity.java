@@ -68,6 +68,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
+            case R.id.userProfileMenuItem:
+                Toast.makeText(this, "PROFILE PRESSED", Toast.LENGTH_LONG).show();
+                break;
             case R.id.chatMenuItem:
                 Toast.makeText(this, "CHAT PRESSED", Toast.LENGTH_LONG).show();
                 break;

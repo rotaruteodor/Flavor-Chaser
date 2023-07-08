@@ -36,11 +36,6 @@ public class User {
     @Column(name = "creation_date")
     private LocalDateTime creationDate;
 
-    @OneToMany(targetEntity = Recipe.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id")
-    private List<Recipe> recipes;
-    //todo savedRecipe instead of Recipe maybe? (to be able to store as favorite and other stuff)
-
     @OneToMany(targetEntity = IngredientInStash.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id")
     private List<IngredientInStash> ingredientsInStash;

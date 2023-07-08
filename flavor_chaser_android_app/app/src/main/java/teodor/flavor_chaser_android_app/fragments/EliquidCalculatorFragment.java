@@ -30,7 +30,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import teodor.flavor_chaser_android_app.R;
-import teodor.flavor_chaser_android_app.classes.NumberInputFilterMinMax;
+import teodor.flavor_chaser_android_app.utils.NumberInputFilterMinMax;
 import teodor.flavor_chaser_android_app.classes.RecipeIngredientResult;
 
 

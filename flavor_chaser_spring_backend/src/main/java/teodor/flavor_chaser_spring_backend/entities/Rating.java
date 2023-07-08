@@ -18,8 +18,8 @@ public class Rating {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "number_of_stars")
-    private Float numberOfStars;
+    @Column(name = "score")
+    private Float score;
 
 
 }

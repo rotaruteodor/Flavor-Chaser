@@ -1,0 +1,13 @@
+{
+  "name": "FlavorName",
+  "description": "FlavorDescription",
+  "company": {
+    "id": 1
+  },
+  "category": {
+    "id": 1
+  },
+  "warning": {
+    "id": 1
+  }
+}

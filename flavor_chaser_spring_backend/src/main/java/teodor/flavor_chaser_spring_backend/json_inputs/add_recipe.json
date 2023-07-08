@@ -1,0 +1,27 @@
+{
+  "name": "RecipeName",
+  "description": "RecipeDescription",
+  "user": {
+    "id": 1
+  },
+  "recipeFlavors": [
+    {
+      "flavor": {
+        "id": 1
+      },
+      "percentage": 10
+    },
+    {
+      "flavor": {
+        "id": 2
+      },
+      "percentage": 11
+    },
+    {
+      "flavor": {
+        "id": 3
+      },
+      "percentage": 12
+    }
+  ]
+}
