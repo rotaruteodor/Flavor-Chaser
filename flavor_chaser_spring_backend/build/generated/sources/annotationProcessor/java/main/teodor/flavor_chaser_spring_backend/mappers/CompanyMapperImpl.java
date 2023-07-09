@@ -7,7 +7,7 @@ import teodor.flavor_chaser_spring_backend.entities.Company;
 /*
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-07-08T19:24:09+0300",
+    date = "2023-07-09T11:36:59+0300",
     comments = "version: 1.2.0.Final, compiler: javac, environment: Java 19 (Oracle Corporation)"
 )
 */

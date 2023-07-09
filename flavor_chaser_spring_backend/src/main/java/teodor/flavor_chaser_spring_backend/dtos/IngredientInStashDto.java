@@ -20,7 +20,7 @@ public class IngredientInStashDto {
 
     private Long id;
     private MainIngredientType type;
-    private Flavor flavor;
+    private FlavorDto flavor;
     private Double currentQuantityInMl;
     private LocalDate purchaseDate;
     private BigDecimal price;

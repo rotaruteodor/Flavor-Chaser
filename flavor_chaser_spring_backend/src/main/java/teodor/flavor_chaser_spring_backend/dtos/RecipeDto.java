@@ -19,6 +19,6 @@ public class RecipeDto {
     private Long id;
     private String name;
     private String description;
-    private List<RecipeFlavor> recipeFlavors;
-    private List<Rating> ratings;
+    private List<RecipeFlavorDto> recipeFlavors;
+    private List<RatingDto> ratings;
 }

@@ -15,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -25,11 +26,19 @@ import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 import teodor.flavor_chaser_android_app.R;
+import teodor.flavor_chaser_android_app.retrofit.entities_apis.FlavorApi;
+import teodor.flavor_chaser_android_app.retrofit.RetrofitService;
 import teodor.flavor_chaser_android_app.utils.NumberInputFilterMinMax;
 import teodor.flavor_chaser_android_app.classes.RecipeIngredientResult;
 
@@ -61,7 +70,9 @@ public class EliquidCalculatorFragment extends Fragment {
     private final Double flavorPgPercentage = 1d;
     private final Double flavorVgPercentage = 0d;
     private Double totalFinalAmount;
+    private String[] flavorNames = new String[0];
 
+    //todo resolve async call for flavorNames
     //todo replace cost with DB values
     //todo flavors suggestions from DB
     //todo style
@@ -86,6 +97,26 @@ public class EliquidCalculatorFragment extends Fragment {
     }
 
     private void initializeNonGraphicalComponents() {
+        FlavorApi flavorApi = RetrofitService.getRetrofit().create(FlavorApi.class);
+        flavorApi.getAllFlavorNames().enqueue(new Callback<List<String>>() {
+            @Override
+            public void onResponse(Call<List<String>> call, Response<List<String>> response) {
+                if (response.body() != null) {
+                    flavorNames = response.body().toArray(new String[0]);
+                    Toast.makeText(getContext(), Arrays.toString(flavorNames), Toast.LENGTH_LONG).show();
+
+                } else {
+                    onFailure(call, new Throwable());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<String>> call, Throwable t) {
+                Toast.makeText(getContext(),
+                        "ERROR! Could not load flavors from database!",
+                        Toast.LENGTH_LONG).show();
+            }
+        });
 
     }
 
@@ -143,7 +174,7 @@ public class EliquidCalculatorFragment extends Fragment {
         configureButtonSaveRecipe();
         configureTvFinishSavingRecipePopup();
 
-        addFlavorRow(v);
+        addFlavorRowInTable(v);
         displayRecipeResultsInTable();
     }
 
@@ -151,7 +182,7 @@ public class EliquidCalculatorFragment extends Fragment {
         textviewFinishSavingRecipePopup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (editTextInputRecipeName.getText().length() > 0){
+                if (editTextInputRecipeName.getText().length() > 0) {
                     //todo save recipe to DB
                     saveRecipePopupDialog.dismiss();
                     editTextInputRecipeName.setText("");
@@ -171,14 +202,23 @@ public class EliquidCalculatorFragment extends Fragment {
                 saveRecipePopupDialog.show();
                 saveRecipePopupDialog.getWindow().setLayout(WindowManager.LayoutParams.WRAP_CONTENT,
                         WindowManager.LayoutParams.WRAP_CONTENT);
-                // todo save to DB
+                //todo
+//                String recipeName = editTextInputRecipeName.getText().toString();
+//                List<RecipeFlavorDto> recipeFlavorDtos = new ArrayList<>();
+//
+//                RecipeDto recipe = new RecipeDto(
+//                        ,
+//                        "",
+//                        );
+//                RecipeApi recipeApi = RetrofitService.getRetrofit().create(RecipeApi.class);
+//                recipeApi.add()
             }
         });
     }
 
     private void configureAddRecipeFlavorButton(View v) {
         imgButtonAddRecipeFlavor.setOnClickListener(v1 -> {
-            addFlavorRow(v);
+            addFlavorRowInTable(v);
             displayRecipeResultsInTable();
         });
     }
@@ -612,9 +652,11 @@ public class EliquidCalculatorFragment extends Fragment {
         return milliliters;
     }
 
-    private void addFlavorRow(View v) {
+    private void addFlavorRowInTable(View v) {
         LayoutInflater vi = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View flavorRowInInputsView = vi.inflate(R.layout.flavor_recipe_component_layout, null);
+        View flavorRowInInputsView = vi.inflate(R.layout.flavor_recipe_component_layout,
+                linearLayoutCalculatorFragFlavors,
+                false);
 
         EditText editTextRecipeFlavorPercentage = flavorRowInInputsView.findViewById(R.id.editTextRecipeFlavorPercentage);
         ImageView imageViewDeleteRecipeFlavor = flavorRowInInputsView.findViewById(R.id.imageViewDeleteRecipeFlavor);
@@ -624,14 +666,20 @@ public class EliquidCalculatorFragment extends Fragment {
         configureImageViewDeleteRecipeFlavor(flavorRowInInputsView, imageViewDeleteRecipeFlavor);
         configureAutoCompleteTextViewFlavorName(flavorRowInInputsView, autoCompleteTextViewFlavorName);
 
-        ViewGroup insertPoint = v.findViewById(R.id.linearLayoutCalculatorFragFlavors);
-        insertPoint.addView(flavorRowInInputsView,
-                0, //todo maybe insert at bottom of list instead of top
+        linearLayoutCalculatorFragFlavors.addView(flavorRowInInputsView,
+                0,
                 new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
-                        ViewGroup.LayoutParams.MATCH_PARENT));
+                        ViewGroup.LayoutParams.WRAP_CONTENT));
+
     }
 
     private void configureAutoCompleteTextViewFlavorName(View flavorRowInInputsView, AutoCompleteTextView autoCompleteTextViewFlavorName) {
+        ArrayAdapter<String> stringArrayAdapter = new ArrayAdapter<>
+                (getContext(), android.R.layout.select_dialog_item, flavorNames);
+
+        autoCompleteTextViewFlavorName.setThreshold(2);
+        autoCompleteTextViewFlavorName.setAdapter(stringArrayAdapter);
+
         autoCompleteTextViewFlavorName.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {

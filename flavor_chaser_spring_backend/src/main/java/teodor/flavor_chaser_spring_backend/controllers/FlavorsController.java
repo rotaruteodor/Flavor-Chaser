@@ -15,6 +15,8 @@ public class FlavorsController {
 
     private static final String FLAVORS_MAIN_URL = "/flavors";
     private static final String FLAVORS_ID_URL = FLAVORS_MAIN_URL + "/{id}";
+    private static final String FLAVORS_NAMES_URL = FLAVORS_MAIN_URL + "/names";
+    private static final String FLAVORS_NAME_URL = FLAVORS_NAMES_URL + "/{name}";
 
     @Autowired
     private FlavorService flavorService;
@@ -27,6 +29,12 @@ public class FlavorsController {
     @GetMapping(FLAVORS_ID_URL)
     public ResponseEntity<FlavorDto> getById(@PathVariable Long id) {
         return flavorService.getById(id);
+    }
+
+    @GetMapping(FLAVORS_NAMES_URL)
+    public List<String> getAllFlavorNames()
+    {
+        return flavorService.getAllNames();
     }
 
     @PostMapping(FLAVORS_MAIN_URL)

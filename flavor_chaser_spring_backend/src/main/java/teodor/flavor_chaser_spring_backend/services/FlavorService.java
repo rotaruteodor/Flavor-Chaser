@@ -1,5 +1,6 @@
 package teodor.flavor_chaser_spring_backend.services;
 
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -36,6 +37,7 @@ public class FlavorService {
     private FlavorMapper flavorMapper;
 
 
+    @Transactional
     public List<FlavorDto> getAll() {
         return flavorsRepository.findAll()
                 .stream()
@@ -49,6 +51,13 @@ public class FlavorService {
                 .map(ResponseEntity::ok)
                 .orElseThrow(() -> new ResourceNotFoundException(
                         ErrorMessage.getDoesNotExistErrorMessage("Flavor", id)));
+    }
+
+    public List<String> getAllNames() {
+        return flavorsRepository.findAll()
+                .stream()
+                .map(Flavor::getName)
+                .toList();
     }
 
     public ResponseEntity<FlavorDto> add(@RequestBody Flavor flavor) {

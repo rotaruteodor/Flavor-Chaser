@@ -5,48 +5,201 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff98a4fd-f8f8-43cb-a842-b60201063a5e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/src/main/java/teodor/flavor_chaser_android_app/retrofit/EntitiesApi/RecipeApi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/src/main/java/teodor/flavor_chaser_android_app/activities/RedirectActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/src/main/java/teodor/flavor_chaser_android_app/auto_complete_textview_utils/AutoCompleteDbAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/src/main/java/teodor/flavor_chaser_android_app/auto_complete_textview_utils/SelectState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/src/main/java/teodor/flavor_chaser_android_app/dtos/ApiExceptionDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/src/main/java/teodor/flavor_chaser_android_app/dtos/CompanyDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/src/main/java/teodor/flavor_chaser_android_app/dtos/FlavorCategoryDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/src/main/java/teodor/flavor_chaser_android_app/dtos/FlavorDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/src/main/java/teodor/flavor_chaser_android_app/dtos/FlavorWarningDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/src/main/java/teodor/flavor_chaser_android_app/dtos/IngredientInStashDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/src/main/java/teodor/flavor_chaser_android_app/dtos/RatingDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/src/main/java/teodor/flavor_chaser_android_app/dtos/RecipeDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/src/main/java/teodor/flavor_chaser_android_app/dtos/RecipeFlavorDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/src/main/java/teodor/flavor_chaser_android_app/dtos/UserDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/src/main/java/teodor/flavor_chaser_android_app/enums/MainIngredientType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/src/main/java/teodor/flavor_chaser_android_app/enums/UserRecipeRelation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/src/main/java/teodor/flavor_chaser_android_app/retrofit/entities_apis/CompanyApi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/src/main/java/teodor/flavor_chaser_android_app/retrofit/entities_apis/FlavorApi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/src/main/java/teodor/flavor_chaser_android_app/retrofit/entities_apis/RecipeApi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/src/main/res/drawable/data_load_progress_bar_style.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/src/main/res/drawable/smoke_skull.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/src/main/res/drawable/vape_pen_icon.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/src/main/res/layout/activity_redirect.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/.gradle/7.4/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/.gradle/7.4/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/.gradle/7.4/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/.gradle/7.4/checksums/md5-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/.gradle/7.4/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/.gradle/7.4/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/.gradle/7.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/.gradle/7.4/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/.gradle/7.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/.gradle/7.4/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/.gradle/7.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/.gradle/7.4/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/.gradle/7.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/.gradle/7.4/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/.gradle/7.4/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/.gradle/7.4/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/.idea/assetWizardSettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/.idea/assetWizardSettings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/src/main/java/teodor/flavor_chaser_android_app/activities/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/src/main/java/teodor/flavor_chaser_android_app/activities/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/src/main/java/teodor/flavor_chaser_android_app/classes/NumberInputFilterMinMax.java" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/src/main/java/teodor/flavor_chaser_android_app/utils/NumberInputFilterMinMax.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/annotation_processor_list/debug/annotationProcessors.json" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/annotation_processor_list/debug/annotationProcessors.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/apk/debug/app-debug.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/R.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/R.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/dex/debug/mergeProjectDexDebug/10/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/dex/debug/mergeProjectDexDebug/10/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/dex/debug/mergeProjectDexDebug/11/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/dex/debug/mergeProjectDexDebug/11/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/dex/debug/mergeProjectDexDebug/4/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/dex/debug/mergeProjectDexDebug/4/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/dex/debug/mergeProjectDexDebug/9/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/dex/debug/mergeProjectDexDebug/9/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/dex_archive_input_jar_hashes/debug/out" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/dex_archive_input_jar_hashes/debug/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/incremental/debug-mergeJavaRes/merge-state" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/incremental/debug-mergeJavaRes/merge-state" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/incremental/debug/mergeDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/incremental/debug/mergeDebugResources/compile-file-map.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values/values.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/incremental/debug/mergeDebugResources/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/incremental/debug/mergeDebugResources/merger.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/incremental/debug/packageDebugResources/merged.dir/values/values.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/incremental/debug/packageDebugResources/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/incremental/debug/packageDebugResources/merger.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/javac/debug/classes/teodor/flavor_chaser_android_app/activities/MainActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/javac/debug/classes/teodor/flavor_chaser_android_app/activities/MainActivity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/javac/debug/classes/teodor/flavor_chaser_android_app/classes/NumberInputFilterMinMax.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/javac/debug/classes/teodor/flavor_chaser_android_app/fragments/EliquidCalculatorFragment$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/javac/debug/classes/teodor/flavor_chaser_android_app/fragments/EliquidCalculatorFragment$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/javac/debug/classes/teodor/flavor_chaser_android_app/fragments/EliquidCalculatorFragment$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/javac/debug/classes/teodor/flavor_chaser_android_app/fragments/EliquidCalculatorFragment$10.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/javac/debug/classes/teodor/flavor_chaser_android_app/fragments/EliquidCalculatorFragment$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/javac/debug/classes/teodor/flavor_chaser_android_app/fragments/EliquidCalculatorFragment$11.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/javac/debug/classes/teodor/flavor_chaser_android_app/fragments/EliquidCalculatorFragment$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/javac/debug/classes/teodor/flavor_chaser_android_app/fragments/EliquidCalculatorFragment$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/javac/debug/classes/teodor/flavor_chaser_android_app/fragments/EliquidCalculatorFragment$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/javac/debug/classes/teodor/flavor_chaser_android_app/fragments/EliquidCalculatorFragment$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/javac/debug/classes/teodor/flavor_chaser_android_app/fragments/EliquidCalculatorFragment$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/javac/debug/classes/teodor/flavor_chaser_android_app/fragments/EliquidCalculatorFragment$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/javac/debug/classes/teodor/flavor_chaser_android_app/fragments/EliquidCalculatorFragment$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/javac/debug/classes/teodor/flavor_chaser_android_app/fragments/EliquidCalculatorFragment$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/javac/debug/classes/teodor/flavor_chaser_android_app/fragments/EliquidCalculatorFragment$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/javac/debug/classes/teodor/flavor_chaser_android_app/fragments/EliquidCalculatorFragment$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/javac/debug/classes/teodor/flavor_chaser_android_app/fragments/EliquidCalculatorFragment$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/javac/debug/classes/teodor/flavor_chaser_android_app/fragments/EliquidCalculatorFragment$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/javac/debug/classes/teodor/flavor_chaser_android_app/fragments/EliquidCalculatorFragment$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/javac/debug/classes/teodor/flavor_chaser_android_app/fragments/EliquidCalculatorFragment$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/javac/debug/classes/teodor/flavor_chaser_android_app/fragments/EliquidCalculatorFragment$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/javac/debug/classes/teodor/flavor_chaser_android_app/fragments/EliquidCalculatorFragment$9.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/javac/debug/classes/teodor/flavor_chaser_android_app/fragments/EliquidCalculatorFragment.class" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/javac/debug/classes/teodor/flavor_chaser_android_app/fragments/EliquidCalculatorFragment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/javac/debug/classes/teodor/flavor_chaser_android_app/retrofit/RetrofitService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/javac/debug/classes/teodor/flavor_chaser_android_app/retrofit/RetrofitService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/local_only_symbol_list/debug/R-def.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/local_only_symbol_list/debug/R-def.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/manifest_merge_blame_file/debug/manifest-merger-blame-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/manifest_merge_blame_file/debug/manifest-merger-blame-debug-report.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/merged_manifest/debug/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/merged_manifest/debug/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/merged_manifests/debug/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/merged_manifests/debug/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/merged_res/debug/drawable_ic_baseline_account_circle_24.xml.flat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/merged_res/debug/drawable_ic_baseline_person_24.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/merged_res/debug/drawable_ic_baseline_person_24.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/merged_res/debug/drawable_round_corners_30.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/merged_res/debug/drawable_round_corners_30.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/merged_res/debug/layout_activity_main.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/merged_res/debug/layout_activity_main.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/merged_res/debug/layout_flavor_recipe_component_layout.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/merged_res/debug/layout_flavor_recipe_component_layout.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/merged_res/debug/layout_navigation_drawer_header.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/merged_res/debug/layout_navigation_drawer_header.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/merged_res/debug/layout_save_recipe_popup.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/merged_res/debug/layout_save_recipe_popup.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/merged_res/debug/menu_navigation_drawer.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/merged_res/debug/menu_navigation_drawer.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/merged_res/debug/values_values.arsc.flat" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/merged_res/debug/values_values.arsc.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/merged_res_blame_folder/debug/out/multi-v2/debug.json" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/merged_res_blame_folder/debug/out/multi-v2/debug.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/merged_res_blame_folder/debug/out/multi-v2/values.json" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/merged_res_blame_folder/debug/out/multi-v2/values.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/merged_res_blame_folder/debug/out/single/debug.json" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/merged_res_blame_folder/debug/out/single/debug.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/packaged_manifests/debug/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/packaged_manifests/debug/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/packaged_res/debug/drawable/ic_baseline_account_circle_24.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/packaged_res/debug/drawable/ic_baseline_person_24.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/packaged_res/debug/drawable/ic_baseline_person_24.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/packaged_res/debug/drawable/round_corners_30.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/packaged_res/debug/drawable/round_corners_30.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/packaged_res/debug/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/packaged_res/debug/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/packaged_res/debug/layout/flavor_recipe_component_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/packaged_res/debug/layout/flavor_recipe_component_layout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/packaged_res/debug/layout/navigation_drawer_header.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/packaged_res/debug/layout/navigation_drawer_header.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/packaged_res/debug/layout/save_recipe_popup.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/packaged_res/debug/layout/save_recipe_popup.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/packaged_res/debug/menu/navigation_drawer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/packaged_res/debug/menu/navigation_drawer.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/packaged_res/debug/values/values.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/packaged_res/debug/values/values.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/processed_res/debug/out/resources-debug.ap_" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/processed_res/debug/out/resources-debug.ap_" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/project_dex_archive/debug/out/53ed8d3bacc9df169e40dff6a59c365eb853259322eebbf11478a2410f570e08_0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/project_dex_archive/debug/out/53ed8d3bacc9df169e40dff6a59c365eb853259322eebbf11478a2410f570e08_1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/project_dex_archive/debug/out/53ed8d3bacc9df169e40dff6a59c365eb853259322eebbf11478a2410f570e08_2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/project_dex_archive/debug/out/53ed8d3bacc9df169e40dff6a59c365eb853259322eebbf11478a2410f570e08_3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/project_dex_archive/debug/out/teodor/flavor_chaser_android_app/activities/MainActivity.dex" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/project_dex_archive/debug/out/teodor/flavor_chaser_android_app/activities/MainActivity.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/project_dex_archive/debug/out/teodor/flavor_chaser_android_app/classes/NumberInputFilterMinMax.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/project_dex_archive/debug/out/teodor/flavor_chaser_android_app/fragments/EliquidCalculatorFragment$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/project_dex_archive/debug/out/teodor/flavor_chaser_android_app/fragments/EliquidCalculatorFragment$1.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/project_dex_archive/debug/out/teodor/flavor_chaser_android_app/fragments/EliquidCalculatorFragment$10.dex" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/project_dex_archive/debug/out/teodor/flavor_chaser_android_app/fragments/EliquidCalculatorFragment$10.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/project_dex_archive/debug/out/teodor/flavor_chaser_android_app/fragments/EliquidCalculatorFragment$11.dex" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/project_dex_archive/debug/out/teodor/flavor_chaser_android_app/fragments/EliquidCalculatorFragment$11.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/project_dex_archive/debug/out/teodor/flavor_chaser_android_app/fragments/EliquidCalculatorFragment$2.dex" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/project_dex_archive/debug/out/teodor/flavor_chaser_android_app/fragments/EliquidCalculatorFragment$2.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/project_dex_archive/debug/out/teodor/flavor_chaser_android_app/fragments/EliquidCalculatorFragment$3.dex" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/project_dex_archive/debug/out/teodor/flavor_chaser_android_app/fragments/EliquidCalculatorFragment$3.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/project_dex_archive/debug/out/teodor/flavor_chaser_android_app/fragments/EliquidCalculatorFragment$4.dex" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/project_dex_archive/debug/out/teodor/flavor_chaser_android_app/fragments/EliquidCalculatorFragment$4.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/project_dex_archive/debug/out/teodor/flavor_chaser_android_app/fragments/EliquidCalculatorFragment$5.dex" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/project_dex_archive/debug/out/teodor/flavor_chaser_android_app/fragments/EliquidCalculatorFragment$5.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/project_dex_archive/debug/out/teodor/flavor_chaser_android_app/fragments/EliquidCalculatorFragment$6.dex" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/project_dex_archive/debug/out/teodor/flavor_chaser_android_app/fragments/EliquidCalculatorFragment$6.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/project_dex_archive/debug/out/teodor/flavor_chaser_android_app/fragments/EliquidCalculatorFragment$7.dex" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/project_dex_archive/debug/out/teodor/flavor_chaser_android_app/fragments/EliquidCalculatorFragment$7.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/project_dex_archive/debug/out/teodor/flavor_chaser_android_app/fragments/EliquidCalculatorFragment$8.dex" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/project_dex_archive/debug/out/teodor/flavor_chaser_android_app/fragments/EliquidCalculatorFragment$8.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/project_dex_archive/debug/out/teodor/flavor_chaser_android_app/fragments/EliquidCalculatorFragment$9.dex" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/project_dex_archive/debug/out/teodor/flavor_chaser_android_app/fragments/EliquidCalculatorFragment$9.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/project_dex_archive/debug/out/teodor/flavor_chaser_android_app/fragments/EliquidCalculatorFragment.dex" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/project_dex_archive/debug/out/teodor/flavor_chaser_android_app/fragments/EliquidCalculatorFragment.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/project_dex_archive/debug/out/teodor/flavor_chaser_android_app/retrofit/RetrofitService.dex" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/project_dex_archive/debug/out/teodor/flavor_chaser_android_app/retrofit/RetrofitService.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/runtime_symbol_list/debug/R.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/runtime_symbol_list/debug/R.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/stable_resource_ids_file/debug/stableIds.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/stable_resource_ids_file/debug/stableIds.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/outputs/logs/manifest-merger-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/outputs/logs/manifest-merger-debug-report.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/src/main/java/teodor/flavor_chaser_android_app/fragments/EliquidCalculatorFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/src/main/java/teodor/flavor_chaser_android_app/fragments/EliquidCalculatorFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/src/main/java/teodor/flavor_chaser_android_app/retrofit/EntitiesApi/RecipeApi.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/src/main/java/teodor/flavor_chaser_android_app/retrofit/RetrofitService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/src/main/java/teodor/flavor_chaser_android_app/retrofit/RetrofitService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/src/main/res/drawable/profile_icon.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/src/main/res/drawable/ic_baseline_person_24.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/src/main/res/drawable/ic_baseline_person_24.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/src/main/res/drawable/round_corners_30.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/src/main/res/drawable/round_corners_30.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/src/main/res/layout/flavor_recipe_component_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/src/main/res/layout/flavor_recipe_component_layout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/src/main/res/layout/navigation_drawer_header.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/src/main/res/layout/navigation_drawer_header.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/src/main/res/layout/save_recipe_popup.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/src/main/res/layout/save_recipe_popup.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/src/main/res/menu/navigation_drawer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/src/main/res/menu/navigation_drawer.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flavor_chaser_android_app/app/src/main/res/values/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../flavor_chaser_android_app/app/src/main/res/values/themes.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.6/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.6/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6/checksums/md5-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.6/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6/dependencies-accessors/dependencies-accessors.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6/dependencies-accessors/dependencies-accessors.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.6/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.6/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.6/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.6/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/entities/Rating$RatingBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/entities/Rating$RatingBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/entities/Rating.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/entities/Rating.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/entities/Recipe$RecipeBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/entities/Recipe$RecipeBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/entities/Recipe.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/entities/Recipe.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/entities/User$UserBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/entities/User$UserBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/entities/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/entities/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/Recipe$RecipeBuilder.class.uniqueId5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/Recipe.class.uniqueId4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/RecipeFlavor$RecipeFlavorBuilder.class.uniqueId0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/RecipeFlavor.class.uniqueId1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/User$UserBuilder.class.uniqueId2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/User.class.uniqueId3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/controllers/FlavorsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/controllers/FlavorsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/dtos/FlavorCategoryDto$FlavorCategoryDtoBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/dtos/FlavorCategoryDto$FlavorCategoryDtoBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/dtos/FlavorCategoryDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/dtos/FlavorCategoryDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/dtos/FlavorDto$FlavorDtoBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/dtos/FlavorDto$FlavorDtoBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/dtos/FlavorDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/dtos/FlavorDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/dtos/FlavorWarningDto$FlavorWarningDtoBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/dtos/FlavorWarningDto$FlavorWarningDtoBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/dtos/FlavorWarningDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/dtos/FlavorWarningDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/dtos/IngredientInStashDto$IngredientInStashDtoBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/dtos/IngredientInStashDto$IngredientInStashDtoBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/dtos/IngredientInStashDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/dtos/IngredientInStashDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/dtos/RecipeDto$RecipeDtoBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/dtos/RecipeDto$RecipeDtoBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/dtos/RecipeDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/dtos/RecipeDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/dtos/RecipeFlavorDto$RecipeFlavorDtoBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/dtos/RecipeFlavorDto$RecipeFlavorDtoBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/dtos/RecipeFlavorDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/dtos/RecipeFlavorDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/dtos/UserDto$UserDtoBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/dtos/UserDto$UserDtoBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/dtos/UserDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/dtos/UserDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/entities/Flavor$FlavorBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/entities/Flavor$FlavorBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/entities/Flavor.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/entities/Flavor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/entities/FlavorCategory$FlavorCategoryBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/entities/FlavorCategory$FlavorCategoryBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/entities/FlavorCategory.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/entities/FlavorCategory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/entities/FlavorWarning$FlavorWarningBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/entities/FlavorWarning$FlavorWarningBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/entities/FlavorWarning.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/entities/FlavorWarning.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/mappers/FlavorCategoryMapperImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/mappers/FlavorCategoryMapperImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/mappers/FlavorMapperImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/mappers/FlavorMapperImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/mappers/FlavorWarningMapperImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/mappers/FlavorWarningMapperImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/mappers/IngredientInStashMapperImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/mappers/IngredientInStashMapperImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/mappers/RecipeFlavorMapperImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/mappers/RecipeFlavorMapperImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/mappers/RecipeMapperImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/mappers/RecipeMapperImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/mappers/UserMapperImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/mappers/UserMapperImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/services/FlavorService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/teodor/flavor_chaser_spring_backend/services/FlavorService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/teodor/flavor_chaser_spring_backend/mappers/CompanyMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/teodor/flavor_chaser_spring_backend/mappers/CompanyMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/teodor/flavor_chaser_spring_backend/mappers/FlavorCategoryMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/teodor/flavor_chaser_spring_backend/mappers/FlavorCategoryMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/teodor/flavor_chaser_spring_backend/mappers/FlavorMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/teodor/flavor_chaser_spring_backend/mappers/FlavorMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/teodor/flavor_chaser_spring_backend/mappers/FlavorWarningMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/teodor/flavor_chaser_spring_backend/mappers/FlavorWarningMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/teodor/flavor_chaser_spring_backend/mappers/IngredientInStashMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/teodor/flavor_chaser_spring_backend/mappers/IngredientInStashMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/teodor/flavor_chaser_spring_backend/mappers/RecipeFlavorMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/teodor/flavor_chaser_spring_backend/mappers/RecipeFlavorMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/teodor/flavor_chaser_spring_backend/mappers/RecipeMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/teodor/flavor_chaser_spring_backend/mappers/RecipeMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/teodor/flavor_chaser_spring_backend/mappers/UserMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/build/generated/sources/annotationProcessor/java/main/teodor/flavor_chaser_spring_backend/mappers/UserMapperImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/entities/Rating.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/entities/Rating.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/entities/Recipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/entities/Recipe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/controllers/FlavorsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/controllers/FlavorsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/dtos/FlavorCategoryDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/dtos/FlavorCategoryDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/dtos/FlavorDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/dtos/FlavorDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/dtos/FlavorWarningDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/dtos/FlavorWarningDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/dtos/IngredientInStashDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/dtos/IngredientInStashDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/dtos/RecipeDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/dtos/RecipeDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/dtos/RecipeFlavorDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/dtos/RecipeFlavorDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/dtos/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/dtos/UserDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/entities/Flavor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/entities/Flavor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/entities/FlavorCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/entities/FlavorCategory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/entities/FlavorWarning.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/entities/FlavorWarning.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/json_inputs/add_recipe.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/json_inputs/add_recipe.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/repositories/FlavorsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/repositories/FlavorsRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,9 +239,9 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/HP/Desktop/FlavorChaserApp/flavor_chaser_spring_backend/src/main/java/teodor/flavor_chaser_spring_backend/exceptions&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/HP/Desktop/FlavorChaserApp/flavor_chaser_spring_backend&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
 }</component>
@@ -122,203 +275,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
-          <line>55</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
-          <line>56</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
-          <line>57</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
-          <line>58</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
-          <line>59</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
-          <line>63</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
-          <line>64</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
-          <line>65</line>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
-          <line>66</line>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
-          <line>61</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
-          <line>68</line>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
-          <line>69</line>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
-          <line>71</line>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
-          <line>72</line>
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
-          <line>73</line>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
-          <line>74</line>
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
-          <line>76</line>
-          <option name="timeStamp" value="27" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
-          <line>77</line>
-          <option name="timeStamp" value="28" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
-          <line>79</line>
-          <option name="timeStamp" value="29" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
-          <line>80</line>
-          <option name="timeStamp" value="30" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
-          <line>75</line>
-          <option name="timeStamp" value="31" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
-          <line>67</line>
-          <option name="timeStamp" value="32" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
-          <line>39</line>
-          <option name="timeStamp" value="34" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
-          <line>40</line>
-          <option name="timeStamp" value="35" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
-          <line>41</line>
-          <properties>
-            <option name="lambda-ordinal" value="-1" />
-          </properties>
-          <option name="timeStamp" value="36" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
-          <line>42</line>
-          <option name="timeStamp" value="37" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
-          <line>43</line>
-          <option name="timeStamp" value="38" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
-          <line>46</line>
-          <option name="timeStamp" value="40" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
-          <line>47</line>
-          <properties>
-            <option name="lambda-ordinal" value="-1" />
-          </properties>
-          <option name="timeStamp" value="41" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
-          <line>48</line>
-          <option name="timeStamp" value="42" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
-          <line>49</line>
-          <properties>
-            <option name="lambda-ordinal" value="-1" />
-          </properties>
-          <option name="timeStamp" value="43" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
-          <line>50</line>
-          <option name="timeStamp" value="44" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
-          <line>51</line>
-          <option name="timeStamp" value="45" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
-          <line>38</line>
-          <properties class="teodor.flavor_chaser_spring_backend.services.FlavorService" method="getAll">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="33" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/teodor/flavor_chaser_spring_backend/services/FlavorService.java</url>
-          <line>45</line>
-          <properties class="teodor.flavor_chaser_spring_backend.services.FlavorService" method="getById">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="39" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

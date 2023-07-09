@@ -18,5 +18,5 @@ public class FlavorCategoryDto {
 
     private Long id;
     private String name;
-    private List<Flavor> flavors;
+//    private List<FlavorDto> flavors;
 }

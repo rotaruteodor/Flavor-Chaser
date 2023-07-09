@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/grey">
+    android:layout_marginStart="20dp">
+    <!--    todo margins not working-->
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineVertical"
@@ -36,8 +37,8 @@
         android:background="@drawable/edittext_main_drawable"
         android:fontFamily="@font/russo_one"
         android:inputType="numberDecimal"
-        android:paddingVertical="10dp"
         android:paddingHorizontal="20dp"
+        android:paddingVertical="10dp"
         android:text="0"
         android:textColor="@color/white"
         android:textColorHint="@color/white"

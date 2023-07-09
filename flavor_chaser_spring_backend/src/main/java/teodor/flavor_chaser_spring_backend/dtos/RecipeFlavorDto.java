@@ -12,6 +12,6 @@ import teodor.flavor_chaser_spring_backend.entities.Flavor;
 @Builder
 public class RecipeFlavorDto {
     private Long id;
-    private Flavor flavor;
+    private FlavorDto flavor;
     private Double percentage;
 }

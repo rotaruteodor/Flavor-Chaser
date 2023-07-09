@@ -21,9 +21,9 @@ public class FlavorDto {
     private Long id;
     private String name;
     private String description;
-    private Company company;
-    private FlavorCategory category;
-    private FlavorWarning warning;
-    private List<Rating> ratings;
+    private CompanyDto company;
+    private FlavorCategoryDto category;
+    private FlavorWarningDto warning;
+    private List<RatingDto> ratings;
 
 }

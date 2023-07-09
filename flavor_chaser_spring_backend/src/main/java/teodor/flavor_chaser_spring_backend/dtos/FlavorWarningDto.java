@@ -20,5 +20,5 @@ public class FlavorWarningDto {
 
     private Long id;
     private String description;
-    private List<Flavor> flavors;
+//    private List<FlavorDto> flavors;
 }

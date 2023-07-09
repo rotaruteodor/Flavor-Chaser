@@ -8,20 +8,24 @@ import teodor.flavor_chaser_android_app.PrivateInfo;
 
 public class RetrofitService {
 
-    private Retrofit retrofit;
+    private static Retrofit retrofit;
 
-    public RetrofitService() {
-        initializeRetrofit();
+    private RetrofitService() {
+
     }
 
-    private void initializeRetrofit() {
+    public static Retrofit getRetrofit() {
+        if (retrofit == null) {
+            initializeRetrofit();
+        }
+        return retrofit;
+    }
+
+
+    private static void initializeRetrofit() {
         retrofit = new Retrofit.Builder()
                 .baseUrl(PrivateInfo.RETROFIT_BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create(new Gson()))
                 .build();
-    }
-
-    public Retrofit getRetrofit() {
-        return retrofit;
     }
 }
