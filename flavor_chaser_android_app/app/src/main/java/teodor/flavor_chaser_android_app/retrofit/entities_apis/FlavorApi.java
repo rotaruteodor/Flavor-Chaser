@@ -2,11 +2,12 @@ package teodor.flavor_chaser_android_app.retrofit.entities_apis;
 
 import java.util.List;
 
+import io.reactivex.rxjava3.core.Observable;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
-import teodor.flavor_chaser_android_app.dtos.FlavorDto;
+import teodor.flavor_chaser_android_app.models.Flavor;
 
 public interface FlavorApi {
 
@@ -18,14 +19,14 @@ public interface FlavorApi {
 
 
     @GET(FLAVORS_MAIN_URL)
-    Call<List<FlavorDto>> getAllFlavors();
+    Observable<List<Flavor>> getAllFlavors();
 
     @GET(FLAVORS_ID_URL)
-    Call<FlavorDto> getFlavorById();
+    Call<Flavor> getFlavorById();
 
     @GET(FLAVORS_NAMES_URL)
     Call<List<String>> getAllFlavorNames();
 
     @POST(FLAVORS_MAIN_URL)
-    Call<FlavorDto> addFlavor(@Body FlavorDto flavorDto);
+    Call<Flavor> addFlavor(@Body Flavor flavor);
 }

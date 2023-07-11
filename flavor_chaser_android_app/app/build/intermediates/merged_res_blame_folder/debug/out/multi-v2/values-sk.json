@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "teodor.flavor_chaser_android_app-mergeDebugResources-28:/values-sk/values-sk.xml",
+            "outputFile": "teodor.flavor_chaser_android_app-mergeDebugResources-32:/values-sk/values-sk.xml",
             "map": [
                 {
                     "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-3\\da10056dbb7cd7dc7f502eafa241998a\\transformed\\appcompat-1.6.1\\res\\values-sk\\values-sk.xml",

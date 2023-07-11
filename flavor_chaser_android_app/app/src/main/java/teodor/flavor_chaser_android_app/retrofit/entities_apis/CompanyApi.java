@@ -2,9 +2,10 @@ package teodor.flavor_chaser_android_app.retrofit.entities_apis;
 
 import java.util.List;
 
+import io.reactivex.rxjava3.core.Observable;
 import retrofit2.Call;
 import retrofit2.http.GET;
-import teodor.flavor_chaser_android_app.dtos.CompanyDto;
+import teodor.flavor_chaser_android_app.models.Company;
 
 public interface CompanyApi {
 
@@ -13,5 +14,5 @@ public interface CompanyApi {
     String COMPANIES_ID_URL = COMPANIES_MAIN_URL + "/{id}";
 
     @GET(COMPANIES_MAIN_URL)
-    Call<List<CompanyDto>> getAll();
+    Observable<List<Company>> getAllCompanies();
 }

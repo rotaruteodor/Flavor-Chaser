@@ -2141,6 +2141,8 @@ dimen abc_text_size_subhead_material
 dimen abc_text_size_subtitle_material_toolbar
 dimen abc_text_size_title_material
 dimen abc_text_size_title_material_toolbar
+dimen activity_horizontal_margin
+dimen activity_vertical_margin
 dimen appcompat_dialog_background_inset
 dimen cardview_compat_inset_shadow
 dimen cardview_default_elevation
@@ -3695,6 +3697,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_login
 layout activity_main
 layout activity_redirect
 layout custom_dialog
@@ -3720,6 +3723,7 @@ layout m3_alert_dialog_actions
 layout m3_alert_dialog_title
 layout m3_auto_complete_simple_item
 layout m3_side_sheet_dialog
+layout main_drawer_layout_content
 layout material_chip_input_combo
 layout material_clock_display
 layout material_clock_display_divider
@@ -3810,6 +3814,8 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
+string action_sign_in
+string action_sign_in_short
 string androidx_startup
 string app_name
 string appbar_scrolling_view_behavior
@@ -3837,8 +3843,11 @@ string friends_tag
 string groups_tag
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
+string invalid_password
+string invalid_username
 string item_view_role_description
 string liquid_calculator_tag
+string login_failed
 string m3_ref_typeface_brand_medium
 string m3_ref_typeface_brand_regular
 string m3_ref_typeface_plain_medium
@@ -3945,6 +3954,8 @@ string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
 string profile_tag
+string prompt_email
+string prompt_password
 string recipe_results_tag
 string recipes_tag
 string search_menu_title
@@ -3955,6 +3966,8 @@ string side_sheet_accessibility_pane_title
 string side_sheet_behavior
 string social_tag
 string status_bar_notification_info_overflow
+string title_activity_login2
+string welcome
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog

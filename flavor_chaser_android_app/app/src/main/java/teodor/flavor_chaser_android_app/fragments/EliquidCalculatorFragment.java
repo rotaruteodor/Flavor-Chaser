@@ -70,12 +70,10 @@ public class EliquidCalculatorFragment extends Fragment {
     private final Double flavorPgPercentage = 1d;
     private final Double flavorVgPercentage = 0d;
     private Double totalFinalAmount;
-    private String[] flavorNames = new String[0];
+    private String[] flavorNames = new String[0]; //todo
 
-    //todo resolve async call for flavorNames
     //todo replace cost with DB values
-    //todo flavors suggestions from DB
-    //todo style
+    //todo style?
     //todo save recipe
     //todo save preferences of stats
     //todo various calculators (for shortfill, etc)
@@ -97,26 +95,6 @@ public class EliquidCalculatorFragment extends Fragment {
     }
 
     private void initializeNonGraphicalComponents() {
-        FlavorApi flavorApi = RetrofitService.getRetrofit().create(FlavorApi.class);
-        flavorApi.getAllFlavorNames().enqueue(new Callback<List<String>>() {
-            @Override
-            public void onResponse(Call<List<String>> call, Response<List<String>> response) {
-                if (response.body() != null) {
-                    flavorNames = response.body().toArray(new String[0]);
-                    Toast.makeText(getContext(), Arrays.toString(flavorNames), Toast.LENGTH_LONG).show();
-
-                } else {
-                    onFailure(call, new Throwable());
-                }
-            }
-
-            @Override
-            public void onFailure(Call<List<String>> call, Throwable t) {
-                Toast.makeText(getContext(),
-                        "ERROR! Could not load flavors from database!",
-                        Toast.LENGTH_LONG).show();
-            }
-        });
 
     }
 
@@ -204,9 +182,9 @@ public class EliquidCalculatorFragment extends Fragment {
                         WindowManager.LayoutParams.WRAP_CONTENT);
                 //todo
 //                String recipeName = editTextInputRecipeName.getText().toString();
-//                List<RecipeFlavorDto> recipeFlavorDtos = new ArrayList<>();
+//                List<RecipeFlavor> recipeFlavors = new ArrayList<>();
 //
-//                RecipeDto recipe = new RecipeDto(
+//                Recipe recipe = new Recipe(
 //                        ,
 //                        "",
 //                        );

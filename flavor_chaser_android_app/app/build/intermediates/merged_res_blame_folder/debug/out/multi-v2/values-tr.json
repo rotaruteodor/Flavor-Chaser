@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "teodor.flavor_chaser_android_app-mergeDebugResources-28:/values-tr/values-tr.xml",
+            "outputFile": "teodor.flavor_chaser_android_app-mergeDebugResources-32:/values-tr/values-tr.xml",
             "map": [
                 {
                     "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-3\\74dc3758240e6d0c5190807890d7e973\\transformed\\material-1.9.0-alpha02\\res\\values-tr\\values-tr.xml",

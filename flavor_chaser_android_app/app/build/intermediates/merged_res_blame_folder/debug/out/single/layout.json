@@ -1,0 +1,38 @@
+[
+    {
+        "merged": "teodor.flavor_chaser_android_app-mergeDebugResources-33:/layout/activity_redirect.xml",
+        "source": "teodor.flavor_chaser_android_app-main-36:/layout/activity_redirect.xml"
+    },
+    {
+        "merged": "teodor.flavor_chaser_android_app-mergeDebugResources-33:/layout/save_recipe_popup.xml",
+        "source": "teodor.flavor_chaser_android_app-main-36:/layout/save_recipe_popup.xml"
+    },
+    {
+        "merged": "teodor.flavor_chaser_android_app-mergeDebugResources-33:/layout/navigation_drawer_header.xml",
+        "source": "teodor.flavor_chaser_android_app-main-36:/layout/navigation_drawer_header.xml"
+    },
+    {
+        "merged": "teodor.flavor_chaser_android_app-mergeDebugResources-33:/layout/flavor_recipe_component_layout.xml",
+        "source": "teodor.flavor_chaser_android_app-main-36:/layout/flavor_recipe_component_layout.xml"
+    },
+    {
+        "merged": "teodor.flavor_chaser_android_app-mergeDebugResources-33:/layout/main_drawer_layout_content.xml",
+        "source": "teodor.flavor_chaser_android_app-main-36:/layout/main_drawer_layout_content.xml"
+    },
+    {
+        "merged": "teodor.flavor_chaser_android_app-mergeDebugResources-33:/layout/activity_main.xml",
+        "source": "teodor.flavor_chaser_android_app-main-36:/layout/activity_main.xml"
+    },
+    {
+        "merged": "teodor.flavor_chaser_android_app-mergeDebugResources-33:/layout/activity_login.xml",
+        "source": "teodor.flavor_chaser_android_app-main-36:/layout/activity_login.xml"
+    },
+    {
+        "merged": "teodor.flavor_chaser_android_app-mergeDebugResources-33:/layout/textview_recipe_results_component.xml",
+        "source": "teodor.flavor_chaser_android_app-main-36:/layout/textview_recipe_results_component.xml"
+    },
+    {
+        "merged": "teodor.flavor_chaser_android_app-mergeDebugResources-33:/layout/fragment_eliquid_calculator.xml",
+        "source": "teodor.flavor_chaser_android_app-main-36:/layout/fragment_eliquid_calculator.xml"
+    }
+]

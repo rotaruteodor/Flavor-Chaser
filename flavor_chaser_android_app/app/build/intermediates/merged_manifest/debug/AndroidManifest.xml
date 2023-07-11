@@ -30,6 +30,13 @@
         android:testOnly="true"
         android:theme="@style/Theme.FlavorChaserAndroidApp" >
         <activity
+            android:name="teodor.flavor_chaser_android_app.activities.LoginActivity"
+            android:exported="false" >
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name="teodor.flavor_chaser_android_app.activities.RedirectActivity"
             android:exported="true" >
             <intent-filter>
