@@ -5,9 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class FlavorChaserSpringBackendApplication {
-
 	public static void main(String[] args) {
 		SpringApplication.run(FlavorChaserSpringBackendApplication.class, args);
 	}
-
 }
