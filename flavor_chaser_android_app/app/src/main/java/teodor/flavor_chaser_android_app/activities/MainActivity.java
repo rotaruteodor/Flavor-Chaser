@@ -1,8 +1,10 @@
 package teodor.flavor_chaser_android_app.activities;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -29,6 +31,8 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import teodor.flavor_chaser_android_app.R;
+import teodor.flavor_chaser_android_app.databinding.ActivityLoginBinding;
+import teodor.flavor_chaser_android_app.databinding.ActivityMainBinding;
 import teodor.flavor_chaser_android_app.fragments.EliquidCalculatorFragment;
 import teodor.flavor_chaser_android_app.models.Flavor;
 import teodor.flavor_chaser_android_app.retrofit.RetrofitService;
@@ -40,48 +44,31 @@ import teodor.flavor_chaser_android_app.retrofit.entities_apis.FlavorApi;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    private Toolbar toolbar;
-    private DrawerLayout drawerLayout;
-    private NavigationView navigationView;
-    private FrameLayout mainFrameLayout;
-    private ProgressBar progressBar;
-    private TextView textviewDataLoad;
-
+    private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
 
         initializeComponents();
     }
 
     private void initializeComponents() {
-        toolbar = findViewById(R.id.toolbar);
-        drawerLayout = findViewById(R.id.drawer_layout);
-        navigationView = findViewById(R.id.navigationView);
-        mainFrameLayout = findViewById(R.id.main_frame_layout);
-        progressBar = findViewById(R.id.dataLoadProgressBar);
-        textviewDataLoad = findViewById(R.id.textviewDataLoad);
-
 
         configureComponents();
     }
 
     private void configureComponents() {
-        setSupportActionBar(toolbar);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,
-                drawerLayout,
-                toolbar,
-                R.string.open_navigation_drawer,
-                R.string.close_navigation_drawer);
-        drawerLayout.addDrawerListener(toggle);
-        toggle.syncState();
+        configureDrawerLayout();
+        getData(); // TODO Rename method?
+    }
 
-        navigationView.setNavigationItemSelectedListener(this);
 
+    private void getData() {
         Retrofit retrofit = RetrofitService.getRetrofit();
-
         FlavorApi flavorApi = retrofit.create(FlavorApi.class);
         CompanyApi companyApi = retrofit.create(CompanyApi.class);
 
@@ -90,43 +77,36 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         requests.add(flavorApi.getAllFlavors());
         requests.add(companyApi.getAllCompanies());
 
-        Observable.zip(
-                        requests,
-                        new Function<Object[], Object>() {
-                            @Override
-                            public Object apply(Object[] objects) throws Exception {
-                                // Objects[] is an array of combined results of completed requests
-                                Log.e("OBJWHAT?", objects[0].toString());
-                                // do something with those results and emit new event
-                                return new Object();
-                            }
-                        })
-                // After all requests had been performed the next observer will receive the Object, returned from Function
+        // TODO
+        Observable.zip(requests, objects -> {
+
+//                    objects[0]
+//                    objects[1]
+
+                    return new Object();
+                })
                 .subscribe(
-                        // Will be triggered if all requests will end successfully (4xx and 5xx also are successful requests too)
-                        new Consumer<Object>() {
-                            @Override
-                            public void accept(Object o) throws Exception {
-                                //Do something on successful completion of all requests
-
-                            }
-                        },
-
-                        // Will be triggered if any error during requests will happen
-                        new Consumer<Throwable>() {
-                            @Override
-                            public void accept(Throwable e) throws Exception {
-                                Log.e("OBJERROR", e.toString());
-                            }
-                        }
+                        o -> Log.e("DATA-LOAD-MAIN-ACTIVITY", "All data was loaded successfully"),
+                        e -> Toast.makeText(getApplicationContext(), "ERROR! Data was not loaded", Toast.LENGTH_LONG) // TODO Custom toast + change message
                 );
+    }
 
+    private void configureDrawerLayout() {
+        setSupportActionBar(binding.toolbar);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,
+                binding.drawerLayout,
+                binding.toolbar,
+                R.string.open_navigation_drawer,
+                R.string.close_navigation_drawer);
+        binding.drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+        binding.navigationView.setNavigationItemSelectedListener(this);
     }
 
     @Override
     public void onBackPressed() {
-        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
-            drawerLayout.closeDrawer(GravityCompat.START);
+        if (binding.drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            binding.drawerLayout.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
         }
@@ -158,7 +138,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
         }
 
-        drawerLayout.closeDrawer(GravityCompat.START);
+        binding.drawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
 
@@ -166,7 +146,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private void setFragment(Fragment fragmentToSet) {
         getSupportFragmentManager()
                 .beginTransaction()
-                .replace(mainFrameLayout.getId(), fragmentToSet)
+                .replace(binding.mainFrameLayout.getId(), fragmentToSet)
                 .commit();
     }
 

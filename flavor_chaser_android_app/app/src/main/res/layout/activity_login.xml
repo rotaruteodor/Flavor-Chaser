@@ -4,6 +4,204 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/light_black"
     tools:context=".activities.LoginActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineVertical90"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineVertical10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineHorizontal30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.3" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineHorizontal64"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.64" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineHorizontal78"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.78" />
+
+    <ImageView
+        android:id="@+id/imgViewLoginPirateSkull"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/pirate_skull"
+        android:src="@drawable/pirate_skull_main_icon"
+        app:layout_constraintBottom_toTopOf="@id/tvLoginPirateSkullMotto"
+        app:layout_constraintEnd_toEndOf="@id/guidelineVertical90"
+        app:layout_constraintStart_toStartOf="@id/guidelineVertical10"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvLoginPirateSkullMotto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/edwardian_script_itc_regular"
+        android:gravity="center"
+        android:text="Lorem Ipsus"
+        android:textColor="@color/white"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineHorizontal30"
+        app:layout_constraintEnd_toEndOf="@id/guidelineVertical90"
+        app:layout_constraintStart_toStartOf="@id/guidelineVertical10"
+        app:layout_constraintTop_toBottomOf="@id/imgViewLoginPirateSkull" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilLoginEmail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColorHint="@color/white"
+        app:boxBackgroundColor="@color/main_transparent_white"
+        app:boxBackgroundMode="outline"
+        app:boxCornerRadiusBottomEnd="20dp"
+        app:boxCornerRadiusBottomStart="20dp"
+        app:boxCornerRadiusTopEnd="20dp"
+        app:boxCornerRadiusTopStart="20dp"
+        app:boxStrokeColor="@color/white"
+        app:hintTextColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/tilLoginPassword"
+        app:layout_constraintEnd_toStartOf="@id/guidelineVertical90"
+        app:layout_constraintStart_toEndOf="@id/guidelineVertical10"
+        app:layout_constraintTop_toBottomOf="@id/guidelineHorizontal30">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tietLoginEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/russo_one"
+            android:hint="@string/email_address"
+            android:inputType="text"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilLoginPassword"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColorHint="@color/white"
+        app:boxBackgroundColor="@color/main_transparent_white"
+        app:boxBackgroundMode="outline"
+        app:boxCornerRadiusBottomEnd="20dp"
+        app:boxCornerRadiusBottomStart="20dp"
+        app:boxCornerRadiusTopEnd="20dp"
+        app:boxCornerRadiusTopStart="20dp"
+        app:boxStrokeColor="@color/white"
+        app:endIconMode="password_toggle"
+        app:hintTextColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/switchRememberLoginCreditentials"
+        app:layout_constraintEnd_toStartOf="@id/guidelineVertical90"
+        app:layout_constraintStart_toEndOf="@id/guidelineVertical10"
+        app:layout_constraintTop_toBottomOf="@id/tilLoginEmail">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tietLoginPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/russo_one"
+            android:hint="@string/prompt_password"
+            android:inputType="textPassword"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Switch
+        android:id="@+id/switchRememberLoginCreditentials"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:text="@string/remember_me"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/guidelineHorizontal64"
+        app:layout_constraintEnd_toStartOf="@id/guidelineVertical90"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@id/guidelineVertical10"
+        app:layout_constraintTop_toBottomOf="@id/tilLoginPassword"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/add_button_drawable"
+        android:fontFamily="@font/russo_one"
+        android:text="@string/login"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineHorizontal78"
+        app:layout_constraintEnd_toEndOf="@id/guidelineVertical90"
+        app:layout_constraintStart_toStartOf="@id/guidelineVertical10"
+        app:layout_constraintTop_toTopOf="@id/guidelineHorizontal64"
+        app:layout_constraintVertical_bias="0" />
+
+    <TextView
+        android:id="@+id/tvCreateAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:drawablePadding="10dp"
+        android:focusable="true"
+        android:text="@string/create_account"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:drawableLeftCompat="@drawable/profile_icon"
+        app:layout_constraintEnd_toStartOf="@id/guidelineVertical90"
+        app:layout_constraintStart_toEndOf="@id/guidelineVertical10"
+        app:layout_constraintTop_toBottomOf="@id/guidelineHorizontal78" />
+
+    <TextView
+        android:id="@+id/tvResetPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:drawableLeft="@drawable/baseline_password_24"
+        android:drawablePadding="10dp"
+        android:focusable="true"
+        android:text="@string/reset_password"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guidelineVertical90"
+        app:layout_constraintStart_toEndOf="@id/guidelineVertical10"
+        app:layout_constraintTop_toBottomOf="@id/tvCreateAccount"
+        app:layout_constraintVertical_bias="0.14" />
+
+    <ProgressBar
+        android:id="@+id/progBarRedirect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateTint="@color/white"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

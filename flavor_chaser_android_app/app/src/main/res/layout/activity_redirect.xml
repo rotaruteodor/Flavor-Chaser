@@ -9,22 +9,38 @@
 
     <ImageView
         android:id="@+id/imgViewSkullIcon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/smoke_skull"
-        app:layout_constraintBottom_toTopOf="@id/imgViewVapePenIcon"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/pirate_skull_main_icon"
+        app:layout_constraintBottom_toTopOf="@id/progBarRedirect"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imgViewVapePenIcon"
+    <ProgressBar
+        android:id="@+id/progBarRedirect"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/vape_pen_icon"
+        android:indeterminateTint="@color/white"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imgViewSkullIcon" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvLoginPirateSkullMotto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/edwardian_script_itc_regular"
+        android:gravity="center"
+        android:text="Loading..."
+        android:textColor="@color/white"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/progBarRedirect" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

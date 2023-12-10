@@ -17,58 +17,32 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
-import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Random;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 import teodor.flavor_chaser_android_app.R;
-import teodor.flavor_chaser_android_app.retrofit.entities_apis.FlavorApi;
-import teodor.flavor_chaser_android_app.retrofit.RetrofitService;
+import teodor.flavor_chaser_android_app.databinding.FragmentEliquidCalculatorBinding;
 import teodor.flavor_chaser_android_app.utils.NumberInputFilterMinMax;
 import teodor.flavor_chaser_android_app.classes.RecipeIngredientResult;
 
 
 public class EliquidCalculatorFragment extends Fragment {
 
-    private TextView textviewCalculatorFragBaseTag;
-    private EditText edittextCalculatorBaseVG;
-    private EditText edittextCalculatorBasePG;
-    private CheckBox checkboxIndividualPgVg;
-    private EditText edittextCalculatorNicotineVG;
-    private EditText edittextCalculatorNicotinePG;
-    private EditText edittextCalculatorNicotineMg;
-    private ImageButton imgButtonAddRecipeFlavor;
-    private LinearLayout linearLayoutCalculatorFragFlavors;
-    private EditText editTextCalculatorFinalAmount;
-    private EditText editTextCalculatorDesiredNicotineStrength;
-    private Button buttonSaveRecipe;
-    private TextView textviewCalculateRecipeResultsError;
-    private TableLayout tableLayoutRecipeResults;
+    private FragmentEliquidCalculatorBinding binding;
+    private AlertDialog saveRecipePopupDialog;
     private EditText editTextInputRecipeName;
     private TextView textviewFinishSavingRecipePopup;
-    private AlertDialog saveRecipePopupDialog;
-
-    private final Double vgWeightPerMl = 1.26;
-    private final Double pgWeightPerMl = 1.04;
-    private final Double pureNicotineWeightPerMl = 1.01;
-    private final Double flavorWeightPerMl = 1d;
-    private final Double flavorPgPercentage = 1d;
-    private final Double flavorVgPercentage = 0d;
+    private static final Double VG_WEIGHT_PER_ML = 1.26;
+    private static final Double PG_WEIGHT_PER_ML = 1.04;
+    private static final Double PURE_NICOTINE_WEIGHT_PER_ML = 1.01;
+    private static final Double FLAVOR_WEIGHT_PER_ML = 1d;
+    private static final Double FLAVOR_PG_PERCENTAGE = 1d;
+    private static final Double FLAVOR_VG_PERCENTAGE = 0d;
     private Double totalFinalAmount;
     private String[] flavorNames = new String[0]; //todo
 
@@ -101,27 +75,25 @@ public class EliquidCalculatorFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_eliquid_calculator, container, false);
+        binding = FragmentEliquidCalculatorBinding.inflate(inflater, container, false);
+        View v = binding.getRoot();
         initializeGraphicalComponents(v);
         return v;
     }
 
-    private void initializeGraphicalComponents(View v) {
-        textviewCalculatorFragBaseTag = v.findViewById(R.id.textviewCalculatorFragBaseTag);
-        edittextCalculatorBaseVG = v.findViewById(R.id.edittextCalculatorBaseVG);
-        edittextCalculatorBasePG = v.findViewById(R.id.edittextCalculatorBasePG);
-        checkboxIndividualPgVg = v.findViewById(R.id.checkboxIndividualPgVg);
-        edittextCalculatorNicotineVG = v.findViewById(R.id.edittextCalculatorNicotineVG);
-        edittextCalculatorNicotinePG = v.findViewById(R.id.edittextCalculatorNicotinePG);
-        edittextCalculatorNicotineMg = v.findViewById(R.id.edittextCalculatorNicotineMg);
-        imgButtonAddRecipeFlavor = v.findViewById(R.id.imgButtonAddRecipeFlavor);
-        linearLayoutCalculatorFragFlavors = v.findViewById(R.id.linearLayoutCalculatorFragFlavors);
-        editTextCalculatorFinalAmount = v.findViewById(R.id.editTextCalculatorFinalAmount);
-        editTextCalculatorDesiredNicotineStrength = v.findViewById(R.id.editTextCalculatorDesiredNicotineStrength);
-        buttonSaveRecipe = v.findViewById(R.id.buttonSaveRecipe);
-        textviewCalculateRecipeResultsError = v.findViewById(R.id.textviewCalculateRecipeResultsError);
-        tableLayoutRecipeResults = v.findViewById(R.id.tableLayoutRecipeResults);
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        binding = null;
+    }
 
+    private void initializeGraphicalComponents(View v) {
+        initializeSaveRecipePopup();
+
+        configureGraphicalComponents(v);
+    }
+
+    private void initializeSaveRecipePopup() {
         View saveRecipePopupView = getActivity().getLayoutInflater()
                 .inflate(R.layout.save_recipe_popup, null);
         saveRecipePopupDialog = new AlertDialog.Builder(getActivity(),
@@ -130,16 +102,12 @@ public class EliquidCalculatorFragment extends Fragment {
                 .create();
         editTextInputRecipeName = saveRecipePopupView.findViewById(R.id.editTextInputRecipeName);
         textviewFinishSavingRecipePopup = saveRecipePopupView.findViewById(R.id.tvFinishSavingRecipePopup);
-
-        configureGraphicalComponents(v);
     }
 
     private void configureGraphicalComponents(View v) {
-        totalFinalAmount = Double.parseDouble(editTextCalculatorFinalAmount.getText().toString());
+        totalFinalAmount = Double.parseDouble(binding.editTextCalculatorFinalAmount.getText().toString());
         saveRecipePopupDialog.getWindow()
-                .setBackgroundDrawable(ContextCompat.getDrawable(getContext(),
-                        R.drawable.round_corners_30));
-
+                .setBackgroundDrawable(ContextCompat.getDrawable(getContext(), R.drawable.round_corners_30));
         configureAddRecipeFlavorButton(v);
         configureCheckboxIndividualVgPg();
         configureEditTextBasePG();
@@ -151,7 +119,6 @@ public class EliquidCalculatorFragment extends Fragment {
         configureEditTextNicotineStrength();
         configureButtonSaveRecipe();
         configureTvFinishSavingRecipePopup();
-
         addFlavorRowInTable(v);
         displayRecipeResultsInTable();
     }
@@ -174,7 +141,7 @@ public class EliquidCalculatorFragment extends Fragment {
 
 
     private void configureButtonSaveRecipe() {
-        buttonSaveRecipe.setOnClickListener(new View.OnClickListener() {
+        binding.buttonSaveRecipe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 saveRecipePopupDialog.show();
@@ -195,14 +162,14 @@ public class EliquidCalculatorFragment extends Fragment {
     }
 
     private void configureAddRecipeFlavorButton(View v) {
-        imgButtonAddRecipeFlavor.setOnClickListener(v1 -> {
+        binding.imgButtonAddRecipeFlavor.setOnClickListener(v1 -> {
             addFlavorRowInTable(v);
             displayRecipeResultsInTable();
         });
     }
 
     private void configureEditTextNicotineMG() {
-        edittextCalculatorNicotineMg.addTextChangedListener(new TextWatcher() {
+        binding.edittextCalculatorNicotineMg.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -214,8 +181,8 @@ public class EliquidCalculatorFragment extends Fragment {
                     Double.valueOf(String.valueOf(s));
                     displayRecipeResultsInTable();
                 } catch (Exception e) {
-                    textviewCalculateRecipeResultsError.setVisibility(View.VISIBLE);
-                    setEditTextError(edittextCalculatorNicotineMg, "Invalid input");
+                    binding.textviewCalculateRecipeResultsError.setVisibility(View.VISIBLE);
+                    setEditTextError(binding.edittextCalculatorNicotineMg, "Invalid input");
                 }
             }
 
@@ -227,7 +194,7 @@ public class EliquidCalculatorFragment extends Fragment {
     }
 
     private void configureEditTextNicotineStrength() {
-        editTextCalculatorDesiredNicotineStrength.addTextChangedListener(new TextWatcher() {
+        binding.editTextCalculatorDesiredNicotineStrength.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -240,8 +207,8 @@ public class EliquidCalculatorFragment extends Fragment {
                     //todo maybe treat case when desired nic strength is greater than nicshot strength?
                     displayRecipeResultsInTable();
                 } catch (Exception e) {
-                    textviewCalculateRecipeResultsError.setVisibility(View.VISIBLE);
-                    setEditTextError(editTextCalculatorDesiredNicotineStrength, "Field can't be empty");
+                    binding.textviewCalculateRecipeResultsError.setVisibility(View.VISIBLE);
+                    setEditTextError(binding.editTextCalculatorDesiredNicotineStrength, "Field can't be empty");
                 }
             }
 
@@ -258,7 +225,7 @@ public class EliquidCalculatorFragment extends Fragment {
     }
 
     private void configureEditTextFinalAmount() {
-        editTextCalculatorFinalAmount.addTextChangedListener(new TextWatcher() {
+        binding.editTextCalculatorFinalAmount.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -270,8 +237,8 @@ public class EliquidCalculatorFragment extends Fragment {
                     totalFinalAmount = Double.valueOf(s.toString());
                     displayRecipeResultsInTable();
                 } catch (Exception e) {
-                    textviewCalculateRecipeResultsError.setVisibility(View.VISIBLE);
-                    setEditTextError(editTextCalculatorFinalAmount, "Field can't be empty");
+                    binding.textviewCalculateRecipeResultsError.setVisibility(View.VISIBLE);
+                    setEditTextError(binding.editTextCalculatorFinalAmount, "Field can't be empty");
                 }
             }
 
@@ -283,19 +250,19 @@ public class EliquidCalculatorFragment extends Fragment {
     }
 
     private void configureCheckboxIndividualVgPg() {
-        checkboxIndividualPgVg.setOnCheckedChangeListener((buttonView, isChecked) -> {
+        binding.checkboxIndividualPgVg.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked) {
-                textviewCalculatorFragBaseTag.setText("Desired final ratio");
+                binding.textviewCalculatorFragBaseTag.setText("Desired final ratio");
                 displayRecipeResultsInTable();
             } else {
-                textviewCalculatorFragBaseTag.setText("Base");
+                binding.textviewCalculatorFragBaseTag.setText("Base");
                 displayRecipeResultsInTable();
             }
         });
     }
 
     private void configureEditTextNicotinePG() {
-        edittextCalculatorNicotinePG.addTextChangedListener(new TextWatcher() {
+        binding.edittextCalculatorNicotinePG.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -303,14 +270,14 @@ public class EliquidCalculatorFragment extends Fragment {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (edittextCalculatorNicotinePG.hasFocus()) {
+                if (binding.edittextCalculatorNicotinePG.hasFocus()) {
                     try {
                         Double currentInput = Double.valueOf(String.valueOf(s));
-                        edittextCalculatorNicotineVG.setText(String.format("%.0f", 100 - currentInput));
+                        binding.edittextCalculatorNicotineVG.setText(String.format("%.0f", 100 - currentInput));
                         displayRecipeResultsInTable();
                     } catch (Exception e) {
-                        textviewCalculateRecipeResultsError.setVisibility(View.VISIBLE);
-                        setEditTextError(edittextCalculatorNicotinePG, "Invalid input");
+                        binding.textviewCalculateRecipeResultsError.setVisibility(View.VISIBLE);
+                        setEditTextError(binding.edittextCalculatorNicotinePG, "Invalid input");
                     }
                 }
             }
@@ -320,11 +287,11 @@ public class EliquidCalculatorFragment extends Fragment {
 
             }
         });
-        edittextCalculatorNicotinePG.setFilters(new InputFilter[]{new NumberInputFilterMinMax(0, 100)});
+        binding.edittextCalculatorNicotinePG.setFilters(new InputFilter[]{new NumberInputFilterMinMax(0, 100)});
     }
 
     private void configureEditTextNicotineVG() {
-        edittextCalculatorNicotineVG.addTextChangedListener(new TextWatcher() {
+        binding.edittextCalculatorNicotineVG.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -332,14 +299,14 @@ public class EliquidCalculatorFragment extends Fragment {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (edittextCalculatorNicotineVG.hasFocus()) {
+                if (binding.edittextCalculatorNicotineVG.hasFocus()) {
                     try {
                         Double currentInput = Double.valueOf(String.valueOf(s));
-                        edittextCalculatorNicotinePG.setText(String.format("%.0f", 100 - currentInput));
+                        binding.edittextCalculatorNicotinePG.setText(String.format("%.0f", 100 - currentInput));
                         displayRecipeResultsInTable();
                     } catch (Exception e) {
-                        textviewCalculateRecipeResultsError.setVisibility(View.VISIBLE);
-                        setEditTextError(edittextCalculatorNicotineVG, "Invalid input");
+                        binding.textviewCalculateRecipeResultsError.setVisibility(View.VISIBLE);
+                        setEditTextError(binding.edittextCalculatorNicotineVG, "Invalid input");
                     }
                 }
             }
@@ -349,11 +316,11 @@ public class EliquidCalculatorFragment extends Fragment {
 
             }
         });
-        edittextCalculatorNicotineVG.setFilters(new InputFilter[]{new NumberInputFilterMinMax(0, 100)});
+        binding.edittextCalculatorNicotineVG.setFilters(new InputFilter[]{new NumberInputFilterMinMax(0, 100)});
     }
 
     private void configureEditTextBaseVG() {
-        edittextCalculatorBaseVG.addTextChangedListener(new TextWatcher() {
+        binding.edittextCalculatorBaseVG.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -361,14 +328,14 @@ public class EliquidCalculatorFragment extends Fragment {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (edittextCalculatorBaseVG.hasFocus()) {
+                if (binding.edittextCalculatorBaseVG.hasFocus()) {
                     try {
                         Double currentInput = Double.valueOf(String.valueOf(s));
-                        edittextCalculatorBasePG.setText(String.format("%.0f", 100 - currentInput));
+                        binding.edittextCalculatorBasePG.setText(String.format("%.0f", 100 - currentInput));
                         displayRecipeResultsInTable();
                     } catch (Exception e) {
-                        textviewCalculateRecipeResultsError.setVisibility(View.VISIBLE);
-                        setEditTextError(edittextCalculatorBaseVG, "Invalid input");
+                        binding.textviewCalculateRecipeResultsError.setVisibility(View.VISIBLE);
+                        setEditTextError(binding.edittextCalculatorBaseVG, "Invalid input");
                     }
                 }
             }
@@ -378,11 +345,11 @@ public class EliquidCalculatorFragment extends Fragment {
 
             }
         });
-        edittextCalculatorBaseVG.setFilters(new InputFilter[]{new NumberInputFilterMinMax(0, 100)});
+        binding.edittextCalculatorBaseVG.setFilters(new InputFilter[]{new NumberInputFilterMinMax(0, 100)});
     }
 
     private void configureEditTextBasePG() {
-        edittextCalculatorBasePG.addTextChangedListener(new TextWatcher() {
+        binding.edittextCalculatorBasePG.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -390,14 +357,14 @@ public class EliquidCalculatorFragment extends Fragment {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (edittextCalculatorBasePG.hasFocus()) {
+                if (binding.edittextCalculatorBasePG.hasFocus()) {
                     try {
                         Double currentInput = Double.valueOf(String.valueOf(s));
-                        edittextCalculatorBaseVG.setText(String.format("%.0f", 100 - currentInput));
+                        binding.edittextCalculatorBaseVG.setText(String.format("%.0f", 100 - currentInput));
                         displayRecipeResultsInTable();
                     } catch (Exception e) {
-                        textviewCalculateRecipeResultsError.setVisibility(View.VISIBLE);
-                        setEditTextError(edittextCalculatorBasePG, "Invalid input");
+                        binding.textviewCalculateRecipeResultsError.setVisibility(View.VISIBLE);
+                        setEditTextError(binding.edittextCalculatorBasePG, "Invalid input");
                     }
                 }
             }
@@ -407,36 +374,36 @@ public class EliquidCalculatorFragment extends Fragment {
 
             }
         });
-        edittextCalculatorBasePG.setFilters(new InputFilter[]{new NumberInputFilterMinMax(0, 100)});
+        binding.edittextCalculatorBasePG.setFilters(new InputFilter[]{new NumberInputFilterMinMax(0, 100)});
     }
 
     private void displayRecipeResultsInTable() {
         if (areInputsValid()) {
-            textviewCalculateRecipeResultsError.setVisibility(View.GONE);
+            binding.textviewCalculateRecipeResultsError.setVisibility(View.GONE);
             clearRecipeResultsTable();
             ArrayList<RecipeIngredientResult> recipeIngredientsResults = getRecipeIngredientsResults();
             for (RecipeIngredientResult recipeIngredientsResult : recipeIngredientsResults) {
-                tableLayoutRecipeResults.addView(getRecipeResultTableRow(recipeIngredientsResult));
+                binding.tableLayoutRecipeResults.addView(getRecipeResultTableRow(recipeIngredientsResult));
                 if (recipeIngredientsResult.getMilliliters() < 0) {
-                    textviewCalculateRecipeResultsError.setVisibility(View.VISIBLE);
+                    binding.textviewCalculateRecipeResultsError.setVisibility(View.VISIBLE);
                 }
             }
         } else {
-            textviewCalculateRecipeResultsError.setVisibility(View.VISIBLE);
+            binding.textviewCalculateRecipeResultsError.setVisibility(View.VISIBLE);
         }
     }
 
     private boolean areInputsValid() {
         try {
-            Double.parseDouble(edittextCalculatorBaseVG.getText().toString());
-            Double.parseDouble(edittextCalculatorBasePG.getText().toString());
-            Double.parseDouble(edittextCalculatorNicotineVG.getText().toString());
-            Double.parseDouble(edittextCalculatorNicotinePG.getText().toString());
-            Double.parseDouble(edittextCalculatorNicotineMg.getText().toString());
-            Double.parseDouble(editTextCalculatorFinalAmount.getText().toString());
-            Double.parseDouble(editTextCalculatorDesiredNicotineStrength.getText().toString());
-            for (int i = 0; i < linearLayoutCalculatorFragFlavors.getChildCount(); i++) {
-                View flavorRowView = linearLayoutCalculatorFragFlavors.getChildAt(i);
+            Double.parseDouble(binding.edittextCalculatorBaseVG.getText().toString());
+            Double.parseDouble(binding.edittextCalculatorBasePG.getText().toString());
+            Double.parseDouble(binding.edittextCalculatorNicotineVG.getText().toString());
+            Double.parseDouble(binding.edittextCalculatorNicotinePG.getText().toString());
+            Double.parseDouble(binding.edittextCalculatorNicotineMg.getText().toString());
+            Double.parseDouble(binding.editTextCalculatorFinalAmount.getText().toString());
+            Double.parseDouble(binding.editTextCalculatorDesiredNicotineStrength.getText().toString());
+            for (int i = 0; i < binding.linearLayoutCalculatorFragFlavors.getChildCount(); i++) {
+                View flavorRowView = binding.linearLayoutCalculatorFragFlavors.getChildAt(i);
                 Double.parseDouble(
                         ((EditText) flavorRowView.findViewById(R.id.editTextRecipeFlavorPercentage))
                                 .getText().toString());
@@ -448,8 +415,8 @@ public class EliquidCalculatorFragment extends Fragment {
     }
 
     private void clearRecipeResultsTable() {
-        for (int i = tableLayoutRecipeResults.getChildCount(); i > 0; i--) {
-            tableLayoutRecipeResults.removeView(tableLayoutRecipeResults.getChildAt(i));
+        for (int i = binding.tableLayoutRecipeResults.getChildCount(); i > 0; i--) {
+            binding.tableLayoutRecipeResults.removeView(binding.tableLayoutRecipeResults.getChildAt(i));
         }
     }
 
@@ -484,7 +451,7 @@ public class EliquidCalculatorFragment extends Fragment {
 
     private ArrayList<RecipeIngredientResult> getRecipeIngredientsResults() {
         ArrayList<RecipeIngredientResult> recipeIngredientsResults = new ArrayList<>();
-        if (checkboxIndividualPgVg.isChecked()) {
+        if (binding.checkboxIndividualPgVg.isChecked()) {
             recipeIngredientsResults.add(getVgRecipeResult());
             recipeIngredientsResults.add(getPgRecipeResult());
         } else {
@@ -492,8 +459,8 @@ public class EliquidCalculatorFragment extends Fragment {
         }
 
         recipeIngredientsResults.add(getNicotineRecipeResult());
-        for (int i = 0; i < linearLayoutCalculatorFragFlavors.getChildCount(); i++) {
-            View flavorRowView = linearLayoutCalculatorFragFlavors.getChildAt(i);
+        for (int i = 0; i < binding.linearLayoutCalculatorFragFlavors.getChildCount(); i++) {
+            View flavorRowView = binding.linearLayoutCalculatorFragFlavors.getChildAt(i);
             String flavorName = ((AutoCompleteTextView) flavorRowView.findViewById(R.id.autoCompleteTextViewFlavorName))
                     .getText().toString();
             Double flavorPercentage = Double.parseDouble(
@@ -516,7 +483,7 @@ public class EliquidCalculatorFragment extends Fragment {
 
     private RecipeIngredientResult getPgRecipeResult() {
         Double milliliters = getPgRecipeResultInMilliliters();
-        Double grams = milliliters * pgWeightPerMl;
+        Double grams = milliliters * PG_WEIGHT_PER_ML;
         Double percentageOfTotal = (milliliters / totalFinalAmount) * 100;
         Double cost = (double) new Random().nextInt(10);
 
@@ -529,7 +496,7 @@ public class EliquidCalculatorFragment extends Fragment {
 
     private RecipeIngredientResult getVgRecipeResult() {
         Double milliliters = getVgRecipeResultInMilliliters();
-        Double grams = milliliters * vgWeightPerMl;
+        Double grams = milliliters * VG_WEIGHT_PER_ML;
         Double percentageOfTotal = (milliliters / totalFinalAmount) * 100;
         Double cost = (double) new Random().nextInt(10);
 
@@ -541,27 +508,27 @@ public class EliquidCalculatorFragment extends Fragment {
     }
 
     private Double getPgRecipeResultInMilliliters() {
-        Double desiredFinalPgPercentage = Double.parseDouble(edittextCalculatorBasePG.getText().toString()) / 100;
-        Double nicshotPgPercentage = Double.parseDouble(edittextCalculatorNicotinePG.getText().toString()) / 100;
+        Double desiredFinalPgPercentage = Double.parseDouble(binding.edittextCalculatorBasePG.getText().toString()) / 100;
+        Double nicshotPgPercentage = Double.parseDouble(binding.edittextCalculatorNicotinePG.getText().toString()) / 100;
         return (totalFinalAmount * desiredFinalPgPercentage)
-                - (flavorPgPercentage * getAllFlavorsRecipeResultsInMilliliters() +
+                - (FLAVOR_PG_PERCENTAGE * getAllFlavorsRecipeResultsInMilliliters() +
                 nicshotPgPercentage * getNicotineRecipeResultInMilliliters());
     }
 
     private Double getVgRecipeResultInMilliliters() {
-        Double desiredFinalVgPercentage = Double.parseDouble(edittextCalculatorBaseVG.getText().toString()) / 100;
-        Double nicshotVgPercentage = Double.parseDouble(edittextCalculatorNicotineVG.getText().toString()) / 100;
+        Double desiredFinalVgPercentage = Double.parseDouble(binding.edittextCalculatorBaseVG.getText().toString()) / 100;
+        Double nicshotVgPercentage = Double.parseDouble(binding.edittextCalculatorNicotineVG.getText().toString()) / 100;
         return (totalFinalAmount * desiredFinalVgPercentage)
-                - (flavorVgPercentage * getAllFlavorsRecipeResultsInMilliliters() +
+                - (FLAVOR_VG_PERCENTAGE * getAllFlavorsRecipeResultsInMilliliters() +
                 nicshotVgPercentage * getNicotineRecipeResultInMilliliters());
     }
 
     private RecipeIngredientResult getBaseRecipeResult() {
 
         Double milliliters = getBaseRecipeResultInMilliliters();
-        Double baseVgPercentage = Double.parseDouble(edittextCalculatorBaseVG.getText().toString()) / 100;
-        Double basePgPercentage = Double.parseDouble(edittextCalculatorBaseVG.getText().toString()) / 100;
-        Double grams = milliliters * (baseVgPercentage * vgWeightPerMl + basePgPercentage * pgWeightPerMl);
+        Double baseVgPercentage = Double.parseDouble(binding.edittextCalculatorBaseVG.getText().toString()) / 100;
+        Double basePgPercentage = Double.parseDouble(binding.edittextCalculatorBaseVG.getText().toString()) / 100;
+        Double grams = milliliters * (baseVgPercentage * VG_WEIGHT_PER_ML + basePgPercentage * PG_WEIGHT_PER_ML);
         Double percentageOfTotal = (milliliters / totalFinalAmount) * 100;
         Double cost = (double) new Random().nextInt(10);
 
@@ -575,13 +542,13 @@ public class EliquidCalculatorFragment extends Fragment {
     private RecipeIngredientResult getNicotineRecipeResult() {
 
         Double milliliters = getNicotineRecipeResultInMilliliters();
-        Double nicshotStrengthInMg = Double.valueOf(edittextCalculatorNicotineMg.getText().toString());
-        Double nicshotVgPercentage = Double.parseDouble(edittextCalculatorNicotineVG.getText().toString()) / 100;
-        Double nicshotPgPercentage = Double.parseDouble(edittextCalculatorNicotinePG.getText().toString()) / 100;
+        Double nicshotStrengthInMg = Double.valueOf(binding.edittextCalculatorNicotineMg.getText().toString());
+        Double nicshotVgPercentage = Double.parseDouble(binding.edittextCalculatorNicotineVG.getText().toString()) / 100;
+        Double nicshotPgPercentage = Double.parseDouble(binding.edittextCalculatorNicotinePG.getText().toString()) / 100;
         Double nicshotStrengthPercentage = nicshotStrengthInMg / 1000;
-        Double grams = (milliliters * nicshotStrengthPercentage * pureNicotineWeightPerMl) +
+        Double grams = (milliliters * nicshotStrengthPercentage * PURE_NICOTINE_WEIGHT_PER_ML) +
                 (milliliters * (1 - nicshotStrengthPercentage)) *
-                        (nicshotVgPercentage * vgWeightPerMl + nicshotPgPercentage * pgWeightPerMl);
+                        (nicshotVgPercentage * VG_WEIGHT_PER_ML + nicshotPgPercentage * PG_WEIGHT_PER_ML);
 
         Double percentageOfTotal = (milliliters / totalFinalAmount) * 100;
         Double cost = (double) new Random().nextInt(10);
@@ -596,7 +563,7 @@ public class EliquidCalculatorFragment extends Fragment {
     private RecipeIngredientResult getFlavorRecipeResult(String flavorName, Double flavorPercentage) {
 
         Double milliliters = getFlavorRecipeResultInMilliliters(flavorPercentage);
-        Double grams = milliliters * flavorWeightPerMl;
+        Double grams = milliliters * FLAVOR_WEIGHT_PER_ML;
         Double percentageOfTotal = (milliliters / totalFinalAmount) * 100;
         Double cost = (double) new Random().nextInt(10);
         RecipeIngredientResult flavorRecipeResult = new RecipeIngredientResult(flavorName, milliliters, grams, percentageOfTotal, cost);
@@ -608,8 +575,8 @@ public class EliquidCalculatorFragment extends Fragment {
     }
 
     private Double getNicotineRecipeResultInMilliliters() {
-        Double finalNicotineStrength = Double.valueOf(editTextCalculatorDesiredNicotineStrength.getText().toString());
-        Double nicshotStrengthInMg = Double.valueOf(edittextCalculatorNicotineMg.getText().toString());
+        Double finalNicotineStrength = Double.valueOf(binding.editTextCalculatorDesiredNicotineStrength.getText().toString());
+        Double nicshotStrengthInMg = Double.valueOf(binding.edittextCalculatorNicotineMg.getText().toString());
         return (totalFinalAmount * finalNicotineStrength) / nicshotStrengthInMg;
     }
 
@@ -619,8 +586,8 @@ public class EliquidCalculatorFragment extends Fragment {
 
     private Double getAllFlavorsRecipeResultsInMilliliters() {
         Double milliliters = 0d;
-        for (int i = 0; i < linearLayoutCalculatorFragFlavors.getChildCount(); i++) {
-            View flavorRowView = linearLayoutCalculatorFragFlavors.getChildAt(i);
+        for (int i = 0; i < binding.linearLayoutCalculatorFragFlavors.getChildCount(); i++) {
+            View flavorRowView = binding.linearLayoutCalculatorFragFlavors.getChildAt(i);
             Double flavorPercentage = Double.parseDouble(
                     ((EditText) flavorRowView.findViewById(R.id.editTextRecipeFlavorPercentage))
                             .getText().toString()) / 100;
@@ -633,7 +600,7 @@ public class EliquidCalculatorFragment extends Fragment {
     private void addFlavorRowInTable(View v) {
         LayoutInflater vi = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View flavorRowInInputsView = vi.inflate(R.layout.flavor_recipe_component_layout,
-                linearLayoutCalculatorFragFlavors,
+                binding.linearLayoutCalculatorFragFlavors,
                 false);
 
         EditText editTextRecipeFlavorPercentage = flavorRowInInputsView.findViewById(R.id.editTextRecipeFlavorPercentage);
@@ -644,7 +611,7 @@ public class EliquidCalculatorFragment extends Fragment {
         configureImageViewDeleteRecipeFlavor(flavorRowInInputsView, imageViewDeleteRecipeFlavor);
         configureAutoCompleteTextViewFlavorName(flavorRowInInputsView, autoCompleteTextViewFlavorName);
 
-        linearLayoutCalculatorFragFlavors.addView(flavorRowInInputsView,
+        binding.linearLayoutCalculatorFragFlavors.addView(flavorRowInInputsView,
                 0,
                 new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
                         ViewGroup.LayoutParams.WRAP_CONTENT));
@@ -666,11 +633,11 @@ public class EliquidCalculatorFragment extends Fragment {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                int currentFlavorIndexInInputs = linearLayoutCalculatorFragFlavors.indexOfChild(flavorRowInInputsView);
+                int currentFlavorIndexInInputs = binding.linearLayoutCalculatorFragFlavors.indexOfChild(flavorRowInInputsView);
 
-                TableRow tableRowOfCurrentFlavor = (TableRow) tableLayoutRecipeResults.getChildAt(
-                        tableLayoutRecipeResults.getChildCount() -
-                                linearLayoutCalculatorFragFlavors.getChildCount() +
+                TableRow tableRowOfCurrentFlavor = (TableRow) binding.tableLayoutRecipeResults.getChildAt(
+                        binding.tableLayoutRecipeResults.getChildCount() -
+                                binding.linearLayoutCalculatorFragFlavors.getChildCount() +
                                 currentFlavorIndexInInputs);
                 ((TextView) tableRowOfCurrentFlavor.getChildAt(0)).setText(s);
             }
@@ -684,7 +651,7 @@ public class EliquidCalculatorFragment extends Fragment {
 
     private void configureImageViewDeleteRecipeFlavor(View flavorRowInInputsView, ImageView imageViewDeleteRecipeFlavor) {
         imageViewDeleteRecipeFlavor.setOnClickListener(v1 -> {
-            linearLayoutCalculatorFragFlavors.removeView(flavorRowInInputsView);
+            binding.linearLayoutCalculatorFragFlavors.removeView(flavorRowInInputsView);
             displayRecipeResultsInTable();
         });
     }
@@ -702,7 +669,7 @@ public class EliquidCalculatorFragment extends Fragment {
                     Double.valueOf(String.valueOf(s));
                     displayRecipeResultsInTable();
                 } catch (Exception e) {
-                    textviewCalculateRecipeResultsError.setVisibility(View.VISIBLE);
+                    binding.textviewCalculateRecipeResultsError.setVisibility(View.VISIBLE);
                     setEditTextError(editTextRecipeFlavorPercentage, "Invalid input");
                 }
 

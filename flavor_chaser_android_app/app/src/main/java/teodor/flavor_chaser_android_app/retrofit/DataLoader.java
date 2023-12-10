@@ -12,6 +12,7 @@ import retrofit2.Response;
 import teodor.flavor_chaser_android_app.models.Flavor;
 import teodor.flavor_chaser_android_app.retrofit.entities_apis.FlavorApi;
 
+// TODO
 public class DataLoader {
 
 //

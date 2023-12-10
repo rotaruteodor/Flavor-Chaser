@@ -7,11 +7,11 @@ import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import teodor.flavor_chaser_android_app.models.Recipe;
+import teodor.flavor_chaser_android_app.retrofit.utils.GeneralInfo;
 
 public interface RecipeApi {
 
-    String MAIN_URL = "/flavor-chaser-backend";
-    String RECIPES_MAIN_URL = MAIN_URL + "/recipes";
+    String RECIPES_MAIN_URL = GeneralInfo.MAIN_BACKEND_URL + "/recipes";
     String RECIPES_ID_URL = RECIPES_MAIN_URL + "/{id}";
 
     @GET(RECIPES_MAIN_URL)
