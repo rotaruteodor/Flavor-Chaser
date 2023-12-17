@@ -1,50 +1,39 @@
 package teodor.flavor_chaser_android_app.activities;
 
-import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
-import java.util.List;
 
-import io.reactivex.rxjava3.core.Observable;
-import io.reactivex.rxjava3.functions.Consumer;
-import io.reactivex.rxjava3.functions.Function;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
 import teodor.flavor_chaser_android_app.R;
-import teodor.flavor_chaser_android_app.databinding.ActivityLoginBinding;
 import teodor.flavor_chaser_android_app.databinding.ActivityMainBinding;
 import teodor.flavor_chaser_android_app.fragments.EliquidCalculatorFragment;
+import teodor.flavor_chaser_android_app.models.Company;
 import teodor.flavor_chaser_android_app.models.Flavor;
-import teodor.flavor_chaser_android_app.retrofit.RetrofitService;
-import teodor.flavor_chaser_android_app.retrofit.entities_apis.CompanyApi;
-import teodor.flavor_chaser_android_app.retrofit.entities_apis.FlavorApi;
+import teodor.flavor_chaser_android_app.models.User;
+import teodor.flavor_chaser_android_app.utils.GeneralInfo;
 
-//todo horizontal progress bar with actual progress
-//todo animation for the 3 dots from the Loading your data... text
+// TODO horizontal progress bar with actual progress
+// TODO animation for the 3 dots from the Loading your data... text
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private ActivityMainBinding binding;
+
+    private User user;
+    private ArrayList<Flavor> flavors;
+    private ArrayList<Company> companies;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,43 +41,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
-
         initializeComponents();
     }
 
     private void initializeComponents() {
-
+        initializePassedData();
         configureComponents();
     }
 
     private void configureComponents() {
         configureDrawerLayout();
-        getData(); // TODO Rename method?
-    }
-
-
-    private void getData() {
-        Retrofit retrofit = RetrofitService.getRetrofit();
-        FlavorApi flavorApi = retrofit.create(FlavorApi.class);
-        CompanyApi companyApi = retrofit.create(CompanyApi.class);
-
-        List<Observable<?>> requests = new ArrayList<>();
-
-        requests.add(flavorApi.getAllFlavors());
-        requests.add(companyApi.getAllCompanies());
-
-        // TODO
-        Observable.zip(requests, objects -> {
-
-//                    objects[0]
-//                    objects[1]
-
-                    return new Object();
-                })
-                .subscribe(
-                        o -> Log.e("DATA-LOAD-MAIN-ACTIVITY", "All data was loaded successfully"),
-                        e -> Toast.makeText(getApplicationContext(), "ERROR! Data was not loaded", Toast.LENGTH_LONG) // TODO Custom toast + change message
-                );
     }
 
     private void configureDrawerLayout() {
@@ -152,6 +114,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     public EliquidCalculatorFragment getEliquidCalculatorFragment() {
         return new EliquidCalculatorFragment();
+    }
+
+    private void initializePassedData() {
+        Intent intent = getIntent();
+        user = intent.getParcelableExtra(GeneralInfo.PASS_USER_REDIRECTACTIVITY_TO_MAINACTIVITY);
+        flavors = intent.getParcelableArrayListExtra(GeneralInfo.PASS_FLAVORS_REDIRECTACTIVITY_TO_MAINACTIVITY);
+        companies = intent.getParcelableArrayListExtra(GeneralInfo.PASS_COMPANIES_REDIRECTACTIVITY_TO_MAINACTIVITY);
     }
 
 }

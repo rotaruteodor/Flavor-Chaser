@@ -28,4 +28,5 @@
     <string name="create_account">Create account</string>
     <string name="reset_password">Reset password</string>
     <string name="pirate_skull">Pirate Skull</string>
+    <string name="server_error">Looks like we\'re having problems with our server, please try again later</string>
 </resources>

@@ -11,26 +11,40 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import io.reactivex.rxjava3.core.Observable;
+import io.reactivex.rxjava3.disposables.Disposable;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
+import teodor.flavor_chaser_android_app.R;
 import teodor.flavor_chaser_android_app.databinding.ActivityRedirectBinding;
+import teodor.flavor_chaser_android_app.models.Company;
+import teodor.flavor_chaser_android_app.models.Flavor;
+import teodor.flavor_chaser_android_app.models.FlavorCategory;
 import teodor.flavor_chaser_android_app.models.User;
 import teodor.flavor_chaser_android_app.retrofit.RetrofitService;
+import teodor.flavor_chaser_android_app.retrofit.entities_apis.CompanyApi;
+import teodor.flavor_chaser_android_app.retrofit.entities_apis.FlavorApi;
 import teodor.flavor_chaser_android_app.retrofit.entities_apis.UserApi;
 import teodor.flavor_chaser_android_app.utils.GeneralInfo;
 
 public class RedirectActivity extends AppCompatActivity {
 
-    //todo login and redirect logic
-
     private ActivityRedirectBinding binding;
     private ActivityResultLauncher<Intent> openMainActivity;
     private ActivityResultLauncher<Intent> openLoginActivity;
     private SharedPreferences sharedPreferences;
+    private Retrofit retrofit;
+    private Disposable allDataLoadingDisposable;
+    // TODO All entities
+    private User currentUser;
+    private ArrayList<Flavor> flavors;
+    private ArrayList<Company> companies;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,13 +52,13 @@ public class RedirectActivity extends AppCompatActivity {
         binding = ActivityRedirectBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
-
         initializeComponents();
     }
 
     private void initializeComponents() {
         initializeActivityLaunchers();
         sharedPreferences = getSharedPreferences(GeneralInfo.SHARED_PREFERENCES_FILENAME, MODE_PRIVATE);
+        retrofit = RetrofitService.getInstance();
         configureComponents();
     }
 
@@ -53,31 +67,33 @@ public class RedirectActivity extends AppCompatActivity {
         if (currentUserEmailAddress.isEmpty()) {
             launchLoginActivity();
         } else {
-            getUserFromDatabase(currentUserEmailAddress);
+            launchActivityBasedOnCurrentUser(currentUserEmailAddress);
         }
     }
 
-    private void getUserFromDatabase(String emailAddress) {
-        Retrofit retrofit = RetrofitService.getRetrofit();
-        UserApi userApi = retrofit.create(UserApi.class);
-        userApi.getUserByEmail(emailAddress).enqueue(new Callback<User>() {
-            @Override
-            public void onResponse(Call<User> call, Response<User> response) {
-                if (response.body() == null) {
-//                    Toast.makeText(getApplicationContext(), "User with email " + emailAddress + " not found", Toast.LENGTH_LONG).show();
-                    launchLoginActivity();
-                } else {
-                    User user = response.body();
-                    // TODO launch main activity with logged in user
-                }
-            }
+    private void launchActivityBasedOnCurrentUser(String emailAddress) {
+        retrofit
+                .create(UserApi.class)
+                .getUserByEmail(emailAddress)
+                .enqueue(new Callback<User>() {
+                    @Override
+                    public void onResponse(Call<User> call, Response<User> response) {
+                        if (response.body() == null) {
+                            launchLoginActivity();
+                        } else {
+                             currentUser = response.body();
+                            launchMainActivityWithAllData();
+                        }
+                    }
 
-            @Override
-            public void onFailure(Call<User> call, Throwable t) {
-                Toast.makeText(getApplicationContext(), t.toString(), Toast.LENGTH_LONG).show();
-            }
-        });
+                    @Override
+                    public void onFailure(Call<User> call, Throwable t) {
+                        Log.e("FLAVOR-CHASER-ERROR", t.toString());
+                        Toast.makeText(getApplicationContext(), R.string.server_error, Toast.LENGTH_LONG).show();
+                    }
+                });
     }
+
 
     private void initializeActivityLaunchers() {
         openMainActivity = registerForActivityResult(
@@ -91,8 +107,36 @@ public class RedirectActivity extends AppCompatActivity {
                 });
     }
 
-    private void launchMainActivity() {
+    private void launchMainActivityWithAllData() {
+        List<Observable<?>> requests = new ArrayList<>();
+        requests.add(retrofit.create(FlavorApi.class).getAllFlavors());
+        requests.add(retrofit.create(CompanyApi.class).getAllCompanies());
+        // TODO Dispose on destroy
+        allDataLoadingDisposable =
+                Observable.zip(requests, objects -> {
+                            // TODO Assign independent of their explicit index?
+                            flavors = (ArrayList<Flavor>) objects[0];
+                            companies = (ArrayList<Company>) objects[1];
+                            return new Object();
+                        })
+                        .subscribe(
+                                o -> {
+                                    Log.e("FLAVOR-CHASER-DATA-LOADING", "All data was loaded successfully");
+                                    launchMainActivity(currentUser, flavors, companies);
+                                },
+                                e -> Toast.makeText(getApplicationContext(), R.string.server_error, Toast.LENGTH_LONG)
+                        );
+    }
+
+    private void launchMainActivity(
+            User user,
+            ArrayList<Flavor> flavors,
+            ArrayList<Company> companies) {
+
         Intent intent = new Intent(RedirectActivity.this, MainActivity.class);
+        intent.putExtra(GeneralInfo.PASS_USER_REDIRECTACTIVITY_TO_MAINACTIVITY, user);
+        intent.putParcelableArrayListExtra(GeneralInfo.PASS_FLAVORS_REDIRECTACTIVITY_TO_MAINACTIVITY, flavors);
+        intent.putParcelableArrayListExtra(GeneralInfo.PASS_COMPANIES_REDIRECTACTIVITY_TO_MAINACTIVITY, companies);
         openMainActivity.launch(intent);
         finish();
     }
@@ -102,7 +146,5 @@ public class RedirectActivity extends AppCompatActivity {
         openLoginActivity.launch(intent);
         finish();
     }
-
-    // TODO General method for launching activity
 
 }

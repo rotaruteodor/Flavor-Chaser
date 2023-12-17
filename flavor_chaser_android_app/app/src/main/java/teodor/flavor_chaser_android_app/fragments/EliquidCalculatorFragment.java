@@ -89,7 +89,6 @@ public class EliquidCalculatorFragment extends Fragment {
 
     private void initializeGraphicalComponents(View v) {
         initializeSaveRecipePopup();
-
         configureGraphicalComponents(v);
     }
 
@@ -510,16 +509,16 @@ public class EliquidCalculatorFragment extends Fragment {
     private Double getPgRecipeResultInMilliliters() {
         Double desiredFinalPgPercentage = Double.parseDouble(binding.edittextCalculatorBasePG.getText().toString()) / 100;
         Double nicshotPgPercentage = Double.parseDouble(binding.edittextCalculatorNicotinePG.getText().toString()) / 100;
-        return (totalFinalAmount * desiredFinalPgPercentage)
-                - (FLAVOR_PG_PERCENTAGE * getAllFlavorsRecipeResultsInMilliliters() +
+        return (totalFinalAmount * desiredFinalPgPercentage) -
+                (FLAVOR_PG_PERCENTAGE * getAllFlavorsRecipeResultsInMilliliters() +
                 nicshotPgPercentage * getNicotineRecipeResultInMilliliters());
     }
 
     private Double getVgRecipeResultInMilliliters() {
         Double desiredFinalVgPercentage = Double.parseDouble(binding.edittextCalculatorBaseVG.getText().toString()) / 100;
         Double nicshotVgPercentage = Double.parseDouble(binding.edittextCalculatorNicotineVG.getText().toString()) / 100;
-        return (totalFinalAmount * desiredFinalVgPercentage)
-                - (FLAVOR_VG_PERCENTAGE * getAllFlavorsRecipeResultsInMilliliters() +
+        return (totalFinalAmount * desiredFinalVgPercentage) -
+                (FLAVOR_VG_PERCENTAGE * getAllFlavorsRecipeResultsInMilliliters() +
                 nicshotVgPercentage * getNicotineRecipeResultInMilliliters());
     }
 
