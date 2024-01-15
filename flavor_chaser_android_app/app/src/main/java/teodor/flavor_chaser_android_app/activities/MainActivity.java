@@ -2,6 +2,7 @@ package teodor.flavor_chaser_android_app.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
@@ -21,6 +22,12 @@ import teodor.flavor_chaser_android_app.databinding.ActivityMainBinding;
 import teodor.flavor_chaser_android_app.fragments.EliquidCalculatorFragment;
 import teodor.flavor_chaser_android_app.models.Company;
 import teodor.flavor_chaser_android_app.models.Flavor;
+import teodor.flavor_chaser_android_app.models.FlavorCategory;
+import teodor.flavor_chaser_android_app.models.FlavorWarning;
+import teodor.flavor_chaser_android_app.models.IngredientInStash;
+import teodor.flavor_chaser_android_app.models.Rating;
+import teodor.flavor_chaser_android_app.models.Recipe;
+import teodor.flavor_chaser_android_app.models.RecipeFlavor;
 import teodor.flavor_chaser_android_app.models.User;
 import teodor.flavor_chaser_android_app.utils.GeneralInfo;
 
@@ -32,8 +39,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private ActivityMainBinding binding;
 
     private User user;
-    private ArrayList<Flavor> flavors;
     private ArrayList<Company> companies;
+    private ArrayList<Flavor> flavors;
+    private ArrayList<FlavorCategory> flavorCategories;
+    private ArrayList<FlavorWarning> flavorWarnings;
+    private ArrayList<IngredientInStash> ingredientsInStash;
+    private ArrayList<Rating> ratings;
+    private ArrayList<Recipe> recipes;
+    private ArrayList<RecipeFlavor> recipeFlavors;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,8 +63,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         configureComponents();
     }
 
+    private void initializePassedData() {
+        Intent intent = getIntent();
+        user = intent.getParcelableExtra(GeneralInfo.PASS_USER_REDIRECTACTIVITY_TO_MAINACTIVITY);
+        companies = intent.getParcelableArrayListExtra(GeneralInfo.PASS_COMPANIES_REDIRECTACTIVITY_TO_MAINACTIVITY);
+        flavors = intent.getParcelableArrayListExtra(GeneralInfo.PASS_FLAVORS_REDIRECTACTIVITY_TO_MAINACTIVITY);
+        flavorCategories = intent.getParcelableArrayListExtra(GeneralInfo.PASS_FLAVORS_CATEGORIES_REDIRECTACTIVITY_TO_MAINACTIVITY);
+        flavorWarnings = intent.getParcelableArrayListExtra(GeneralInfo.PASS_FLAVORS_WARNINGS_REDIRECTACTIVITY_TO_MAINACTIVITY);
+        ingredientsInStash = intent.getParcelableArrayListExtra(GeneralInfo.PASS_INGREDIENTS_IN_STASH_REDIRECTACTIVITY_TO_MAINACTIVITY);
+        ratings = intent.getParcelableArrayListExtra(GeneralInfo.PASS_RATINGS_REDIRECTACTIVITY_TO_MAINACTIVITY);
+        recipes = intent.getParcelableArrayListExtra(GeneralInfo.PASS_RECIPES_REDIRECTACTIVITY_TO_MAINACTIVITY);
+        recipeFlavors = intent.getParcelableArrayListExtra(GeneralInfo.PASS_RECIPE_FLAVORS_REDIRECTACTIVITY_TO_MAINACTIVITY);
+    }
+
     private void configureComponents() {
         configureDrawerLayout();
+        Log.e("FLAVOR-CHASER-MAINDATA", user.toString() + "\n" + companies.toString() + "\n" + flavors.toString() + "\n" + flavorCategories.toString() + "\n" + flavorWarnings.toString() + "\n" + ingredientsInStash.toString() + "\n" + ratings.toString() + "\n" + recipes.toString() + "\n" + recipeFlavors.toString() + "\n");
     }
 
     private void configureDrawerLayout() {
@@ -114,13 +142,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     public EliquidCalculatorFragment getEliquidCalculatorFragment() {
         return new EliquidCalculatorFragment();
-    }
-
-    private void initializePassedData() {
-        Intent intent = getIntent();
-        user = intent.getParcelableExtra(GeneralInfo.PASS_USER_REDIRECTACTIVITY_TO_MAINACTIVITY);
-        flavors = intent.getParcelableArrayListExtra(GeneralInfo.PASS_FLAVORS_REDIRECTACTIVITY_TO_MAINACTIVITY);
-        companies = intent.getParcelableArrayListExtra(GeneralInfo.PASS_COMPANIES_REDIRECTACTIVITY_TO_MAINACTIVITY);
     }
 
 }

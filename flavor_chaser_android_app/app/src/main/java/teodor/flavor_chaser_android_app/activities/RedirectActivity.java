@@ -25,10 +25,21 @@ import teodor.flavor_chaser_android_app.databinding.ActivityRedirectBinding;
 import teodor.flavor_chaser_android_app.models.Company;
 import teodor.flavor_chaser_android_app.models.Flavor;
 import teodor.flavor_chaser_android_app.models.FlavorCategory;
+import teodor.flavor_chaser_android_app.models.FlavorWarning;
+import teodor.flavor_chaser_android_app.models.IngredientInStash;
+import teodor.flavor_chaser_android_app.models.Rating;
+import teodor.flavor_chaser_android_app.models.Recipe;
+import teodor.flavor_chaser_android_app.models.RecipeFlavor;
 import teodor.flavor_chaser_android_app.models.User;
 import teodor.flavor_chaser_android_app.retrofit.RetrofitService;
 import teodor.flavor_chaser_android_app.retrofit.entities_apis.CompanyApi;
 import teodor.flavor_chaser_android_app.retrofit.entities_apis.FlavorApi;
+import teodor.flavor_chaser_android_app.retrofit.entities_apis.FlavorCategoryApi;
+import teodor.flavor_chaser_android_app.retrofit.entities_apis.FlavorWarningApi;
+import teodor.flavor_chaser_android_app.retrofit.entities_apis.IngredientInStashApi;
+import teodor.flavor_chaser_android_app.retrofit.entities_apis.RatingApi;
+import teodor.flavor_chaser_android_app.retrofit.entities_apis.RecipeApi;
+import teodor.flavor_chaser_android_app.retrofit.entities_apis.RecipeFlavorApi;
 import teodor.flavor_chaser_android_app.retrofit.entities_apis.UserApi;
 import teodor.flavor_chaser_android_app.utils.GeneralInfo;
 
@@ -40,10 +51,16 @@ public class RedirectActivity extends AppCompatActivity {
     private SharedPreferences sharedPreferences;
     private Retrofit retrofit;
     private Disposable allDataLoadingDisposable;
-    // TODO All entities
+
     private User currentUser;
-    private ArrayList<Flavor> flavors;
     private ArrayList<Company> companies;
+    private ArrayList<Flavor> flavors;
+    private ArrayList<FlavorCategory> flavorCategories;
+    private ArrayList<FlavorWarning> flavorWarnings;
+    private ArrayList<IngredientInStash> ingredientsInStash;
+    private ArrayList<Rating> ratings;
+    private ArrayList<Recipe> recipes;
+    private ArrayList<RecipeFlavor> recipeFlavors;
 
 
     @Override
@@ -96,33 +113,47 @@ public class RedirectActivity extends AppCompatActivity {
 
 
     private void initializeActivityLaunchers() {
-        openMainActivity = registerForActivityResult(
-                new ActivityResultContracts.StartActivityForResult(),
-                result -> {
-                });
-
-        openLoginActivity = registerForActivityResult(
-                new ActivityResultContracts.StartActivityForResult(),
-                result -> {
-                });
+        openMainActivity = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {});
+        openLoginActivity = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {});
     }
 
     private void launchMainActivityWithAllData() {
         List<Observable<?>> requests = new ArrayList<>();
-        requests.add(retrofit.create(FlavorApi.class).getAllFlavors());
         requests.add(retrofit.create(CompanyApi.class).getAllCompanies());
+        requests.add(retrofit.create(FlavorApi.class).getAllFlavors());
+        requests.add(retrofit.create(FlavorCategoryApi.class).getAllFlavorsCategories());
+        requests.add(retrofit.create(FlavorWarningApi.class).getAllFlavorsWarnings());
+        requests.add(retrofit.create(IngredientInStashApi.class).getAllIngredientsInStashByUserId(currentUser.getId()));
+        requests.add(retrofit.create(RatingApi.class).getAllRatings());
+        requests.add(retrofit.create(RecipeApi.class).getAllRecipes());
+        requests.add(retrofit.create(RecipeFlavorApi.class).getAllRecipeFlavors());
+
         // TODO Dispose on destroy
         allDataLoadingDisposable =
                 Observable.zip(requests, objects -> {
                             // TODO Assign independent of their explicit index?
-                            flavors = (ArrayList<Flavor>) objects[0];
-                            companies = (ArrayList<Company>) objects[1];
+                            companies = (ArrayList<Company>) objects[0];
+                            flavors = (ArrayList<Flavor>) objects[1];
+                            flavorCategories = (ArrayList<FlavorCategory>) objects[2];
+                            flavorWarnings = (ArrayList<FlavorWarning>) objects[3];
+                            ingredientsInStash = (ArrayList<IngredientInStash>) objects[4];
+                            ratings = (ArrayList<Rating>) objects[5];
+                            recipes = (ArrayList<Recipe>) objects[6];
+                            recipeFlavors = (ArrayList<RecipeFlavor>) objects[7];
                             return new Object();
                         })
                         .subscribe(
                                 o -> {
                                     Log.e("FLAVOR-CHASER-DATA-LOADING", "All data was loaded successfully");
-                                    launchMainActivity(currentUser, flavors, companies);
+                                    launchMainActivity(currentUser,
+                                            companies,
+                                            flavors,
+                                            flavorCategories,
+                                            flavorWarnings,
+                                            ingredientsInStash,
+                                            ratings,
+                                            recipes,
+                                            recipeFlavors);
                                 },
                                 e -> Toast.makeText(getApplicationContext(), R.string.server_error, Toast.LENGTH_LONG)
                         );
@@ -130,13 +161,25 @@ public class RedirectActivity extends AppCompatActivity {
 
     private void launchMainActivity(
             User user,
+            ArrayList<Company> companies,
             ArrayList<Flavor> flavors,
-            ArrayList<Company> companies) {
+            ArrayList<FlavorCategory> flavorCategories,
+            ArrayList<FlavorWarning> flavorWarnings,
+            ArrayList<IngredientInStash> ingredientsInStash,
+            ArrayList<Rating> ratings,
+            ArrayList<Recipe> recipes,
+            ArrayList<RecipeFlavor> recipeFlavors) {
 
         Intent intent = new Intent(RedirectActivity.this, MainActivity.class);
         intent.putExtra(GeneralInfo.PASS_USER_REDIRECTACTIVITY_TO_MAINACTIVITY, user);
-        intent.putParcelableArrayListExtra(GeneralInfo.PASS_FLAVORS_REDIRECTACTIVITY_TO_MAINACTIVITY, flavors);
         intent.putParcelableArrayListExtra(GeneralInfo.PASS_COMPANIES_REDIRECTACTIVITY_TO_MAINACTIVITY, companies);
+        intent.putParcelableArrayListExtra(GeneralInfo.PASS_FLAVORS_REDIRECTACTIVITY_TO_MAINACTIVITY, flavors);
+        intent.putParcelableArrayListExtra(GeneralInfo.PASS_FLAVORS_CATEGORIES_REDIRECTACTIVITY_TO_MAINACTIVITY, flavorCategories);
+        intent.putParcelableArrayListExtra(GeneralInfo.PASS_FLAVORS_WARNINGS_REDIRECTACTIVITY_TO_MAINACTIVITY, flavorWarnings);
+        intent.putParcelableArrayListExtra(GeneralInfo.PASS_INGREDIENTS_IN_STASH_REDIRECTACTIVITY_TO_MAINACTIVITY, ingredientsInStash);
+        intent.putParcelableArrayListExtra(GeneralInfo.PASS_RATINGS_REDIRECTACTIVITY_TO_MAINACTIVITY, ratings);
+        intent.putParcelableArrayListExtra(GeneralInfo.PASS_RECIPES_REDIRECTACTIVITY_TO_MAINACTIVITY, recipes);
+        intent.putParcelableArrayListExtra(GeneralInfo.PASS_RECIPE_FLAVORS_REDIRECTACTIVITY_TO_MAINACTIVITY, recipeFlavors);
         openMainActivity.launch(intent);
         finish();
     }

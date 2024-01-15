@@ -6,7 +6,6 @@ import io.reactivex.rxjava3.core.Observable;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
-import retrofit2.http.Headers;
 import retrofit2.http.POST;
 import teodor.flavor_chaser_android_app.models.Flavor;
 import teodor.flavor_chaser_android_app.retrofit.utils.GeneralInfo;
@@ -28,7 +27,6 @@ public interface FlavorApi {
     @GET(FLAVORS_NAMES_URL)
     Call<List<String>> getAllFlavorNames();
 
-//    @Headers("Accept: application/json")
     @POST(FLAVORS_MAIN_URL)
     Call<Flavor> addFlavor(@Body Flavor flavor);
 }

@@ -1,19 +1,13 @@
 package teodor.flavor_chaser_android_app.models;
 
-import android.os.Build;
 import android.os.Parcel;
 import android.os.Parcelable;
-
-import androidx.annotation.RequiresApi;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Data
 public class User implements Parcelable {
@@ -29,6 +23,11 @@ public class User implements Parcelable {
     @Override
     public int describeContents() {
         return 0;
+    }
+
+    public Long getId() {
+        // TODO Make Lombok work
+        return id;
     }
 
     @Override
