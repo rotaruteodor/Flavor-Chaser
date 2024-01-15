@@ -24,5 +24,6 @@ public class IngredientInStashDto {
     private Double currentQuantityInMl;
     private LocalDate purchaseDate;
     private BigDecimal price;
+    private UserDto user;
 
 }

@@ -39,5 +39,7 @@ public class IngredientInStash {
     @Column(name = "price")
     private BigDecimal price;
 
-
+    @ManyToOne(targetEntity = User.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_id")
+    private User user;
 }

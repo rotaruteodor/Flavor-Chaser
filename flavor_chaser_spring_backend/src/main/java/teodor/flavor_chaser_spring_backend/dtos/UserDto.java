@@ -22,5 +22,4 @@ public class UserDto {
     private String emailAddress;
     private String password;
     private LocalDateTime creationDate;
-    private List<IngredientInStashDto> ingredientsInStash;
 }

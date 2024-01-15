@@ -36,8 +36,4 @@ public class User {
     @Column(name = "creation_date")
     private LocalDateTime creationDate;
 
-    @OneToMany(targetEntity = IngredientInStash.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id")
-    private List<IngredientInStash> ingredientsInStash;
-
 }
