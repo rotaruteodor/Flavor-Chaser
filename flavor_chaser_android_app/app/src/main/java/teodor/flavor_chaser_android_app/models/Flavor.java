@@ -5,10 +5,7 @@ import android.os.Parcelable;
 
 import java.util.List;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Data
 public class Flavor implements Parcelable {
@@ -71,4 +68,5 @@ public class Flavor implements Parcelable {
             return new Flavor[size];
         }
     };
+
 }

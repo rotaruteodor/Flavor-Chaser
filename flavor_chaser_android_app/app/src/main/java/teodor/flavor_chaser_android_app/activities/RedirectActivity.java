@@ -98,7 +98,7 @@ public class RedirectActivity extends AppCompatActivity {
                         if (response.body() == null) {
                             launchLoginActivity();
                         } else {
-                             currentUser = response.body();
+                            currentUser = response.body();
                             launchMainActivityWithAllData();
                         }
                     }
@@ -113,8 +113,10 @@ public class RedirectActivity extends AppCompatActivity {
 
 
     private void initializeActivityLaunchers() {
-        openMainActivity = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {});
-        openLoginActivity = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {});
+        openMainActivity = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
+        });
+        openLoginActivity = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
+        });
     }
 
     private void launchMainActivityWithAllData() {
@@ -144,7 +146,6 @@ public class RedirectActivity extends AppCompatActivity {
                         })
                         .subscribe(
                                 o -> {
-                                    Log.e("FLAVOR-CHASER-DATA-LOADING", "All data was loaded successfully");
                                     launchMainActivity(currentUser,
                                             companies,
                                             flavors,

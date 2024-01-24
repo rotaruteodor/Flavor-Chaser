@@ -5,7 +5,7 @@ import java.util.List;
 import io.reactivex.rxjava3.core.Observable;
 import retrofit2.http.GET;
 import teodor.flavor_chaser_android_app.models.Company;
-import teodor.flavor_chaser_android_app.retrofit.utils.GeneralInfo;
+import teodor.flavor_chaser_android_app.utils.GeneralInfo;
 
 public interface CompanyApi {
 

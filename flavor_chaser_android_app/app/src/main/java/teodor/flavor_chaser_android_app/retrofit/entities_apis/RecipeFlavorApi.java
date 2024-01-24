@@ -8,7 +8,8 @@ import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import teodor.flavor_chaser_android_app.models.RecipeFlavor;
-import teodor.flavor_chaser_android_app.retrofit.utils.GeneralInfo;
+import teodor.flavor_chaser_android_app.utils.GeneralInfo;
+
 
 public interface RecipeFlavorApi {
 

@@ -6,7 +6,8 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
 import teodor.flavor_chaser_android_app.models.User;
-import teodor.flavor_chaser_android_app.retrofit.utils.GeneralInfo;
+import teodor.flavor_chaser_android_app.utils.GeneralInfo;
+
 
 public interface UserApi {
 

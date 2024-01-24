@@ -18,6 +18,7 @@ public class IngredientInStash implements Parcelable {
 
     private Long id;
     private MainIngredientType type;
+    private String description;
     private Flavor flavor;
     private Double currentQuantityInMl;
     private LocalDate purchaseDate;
@@ -32,6 +33,7 @@ public class IngredientInStash implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeValue(this.id);
         dest.writeInt(this.type == null ? -1 : this.type.ordinal());
+        dest.writeString(this.description);
         dest.writeParcelable(this.flavor, flags);
         dest.writeValue(this.currentQuantityInMl);
         dest.writeSerializable(this.purchaseDate);
@@ -42,6 +44,7 @@ public class IngredientInStash implements Parcelable {
         this.id = (Long) source.readValue(Long.class.getClassLoader());
         int tmpType = source.readInt();
         this.type = tmpType == -1 ? null : MainIngredientType.values()[tmpType];
+        this.description = source.readString();
         this.flavor = source.readParcelable(Flavor.class.getClassLoader());
         this.currentQuantityInMl = (Double) source.readValue(Double.class.getClassLoader());
         this.purchaseDate = (LocalDate) source.readSerializable();
@@ -55,6 +58,7 @@ public class IngredientInStash implements Parcelable {
         this.id = (Long) in.readValue(Long.class.getClassLoader());
         int tmpType = in.readInt();
         this.type = tmpType == -1 ? null : MainIngredientType.values()[tmpType];
+        this.description = in.readString();
         this.flavor = in.readParcelable(Flavor.class.getClassLoader());
         this.currentQuantityInMl = (Double) in.readValue(Double.class.getClassLoader());
         this.purchaseDate = (LocalDate) in.readSerializable();

@@ -9,7 +9,8 @@ import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
 import teodor.flavor_chaser_android_app.models.IngredientInStash;
-import teodor.flavor_chaser_android_app.retrofit.utils.GeneralInfo;
+import teodor.flavor_chaser_android_app.utils.GeneralInfo;
+
 
 public interface IngredientInStashApi {
 

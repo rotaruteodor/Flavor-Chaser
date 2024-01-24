@@ -4,5 +4,6 @@ public enum MainIngredientType {
     BASE,
     PG,
     VG,
-    NICOTINE
+    NICOTINE,
+    FLAVOR
 }

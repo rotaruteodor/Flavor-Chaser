@@ -78,7 +78,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private void configureComponents() {
         configureDrawerLayout();
-        Log.e("FLAVOR-CHASER-MAINDATA", user.toString() + "\n" + companies.toString() + "\n" + flavors.toString() + "\n" + flavorCategories.toString() + "\n" + flavorWarnings.toString() + "\n" + ingredientsInStash.toString() + "\n" + ratings.toString() + "\n" + recipes.toString() + "\n" + recipeFlavors.toString() + "\n");
     }
 
     private void configureDrawerLayout() {
@@ -141,7 +140,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     public EliquidCalculatorFragment getEliquidCalculatorFragment() {
-        return new EliquidCalculatorFragment();
+        Bundle bundle = new Bundle();
+        bundle.putParcelableArrayList(GeneralInfo.PASS_FLAVORS_MAINACTIVITY_TO_ELIQCALCFRAGMENT, flavors);
+        bundle.putParcelableArrayList(GeneralInfo.PASS_INGREDIENTS_IN_STASH_MAINACTIVITY_TO_ELIQCALCFRAGMENT, ingredientsInStash);
+        EliquidCalculatorFragment fragment = new EliquidCalculatorFragment();
+        fragment.setArguments(bundle);
+        return fragment;
     }
 
 }

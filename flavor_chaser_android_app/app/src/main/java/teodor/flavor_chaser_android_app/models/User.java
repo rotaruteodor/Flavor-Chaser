@@ -25,11 +25,6 @@ public class User implements Parcelable {
         return 0;
     }
 
-    public Long getId() {
-        // TODO Make Lombok work
-        return id;
-    }
-
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeLong(this.id);
@@ -64,7 +59,6 @@ public class User implements Parcelable {
         this.creationDate = (LocalDateTime) in.readSerializable();
         this.ingredientsInStash = new ArrayList<>();
         in.readTypedList(this.ingredientsInStash, IngredientInStash.CREATOR);
-//        in.readList(this.ingredientsInStash, IngredientInStash.class.getClassLoader());
     }
 
     public static final Parcelable.Creator<User> CREATOR = new Parcelable.Creator<User>() {
