@@ -1,4 +1,13 @@
 {
+  "type": "VG",
+  "description": "500ml 100% VG (E-Potion)",
+  "currentQuantityInMl": 10,
+  "purchaseDate": "2020-03-12",
+  "price": 19.99,
+  "user": {"id": 1}
+},
+
+{
   "type": "FLAVOR",
   "flavor": {"id": 1},
   "currentQuantityInMl": 10,

@@ -26,6 +26,9 @@ public class IngredientInStash {
     @Column(name = "type")
     private MainIngredientType type;
 
+    @Column(name = "description")
+    private String description;
+
     @ManyToOne(targetEntity = Flavor.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "flavor_id")
     private Flavor flavor;

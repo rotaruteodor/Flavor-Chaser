@@ -55,22 +55,25 @@ public class IngredientInStashService {
     }
 
     public ResponseEntity<IngredientInStashDto> add(@RequestBody IngredientInStash ingredientInStash) {
+
         if (ingredientInStash.getType() == MainIngredientType.FLAVOR) {
             flavorsRepository.findById(ingredientInStash.getFlavor().getId())
-                    .map(w -> {
-                        ingredientInStash.setFlavor(w);
-                        return w;
+                    .map(flavor -> {
+                        ingredientInStash.setFlavor(flavor);
+                        ingredientInStash.setDescription(flavor.getName() + " (" + flavor.getCompany() + ")");
+                        return flavor;
                     }).orElseThrow(() -> new ResourceNotFoundException("Flavor with ID:"
                             + ingredientInStash.getFlavor().getId()
                             + " WAS NOT FOUND"));
+
         } else {
             ingredientInStash.setFlavor(null); // TODO Do I need this?
         }
 
         usersRepository.findById(ingredientInStash.getUser().getId())
-                .map(w -> {
-                    ingredientInStash.setUser(w);
-                    return w;
+                .map(user -> {
+                    ingredientInStash.setUser(user);
+                    return user;
                 }).orElseThrow(() -> new ResourceNotFoundException("User with ID:"
                         + ingredientInStash.getUser().getId()
                         + " WAS NOT FOUND"));
