@@ -36,4 +36,8 @@ public class User {
     @Column(name = "creation_date")
     private LocalDateTime creationDate;
 
+    @OneToOne(targetEntity = LiquidCalculatorPreferences.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "liquid_calculator_preferences_id")
+    private LiquidCalculatorPreferences liquidCalculatorPreferences;
+
 }

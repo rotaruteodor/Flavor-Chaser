@@ -16,7 +16,6 @@ public class IngredientsInStashController {
 
     private static final String INGREDIENTS_IN_STASH_MAIN_URL = "/ingredients_in_stash";
     private static final String INGREDIENTS_IN_STASH_ID_URL = INGREDIENTS_IN_STASH_MAIN_URL + "/{id}";
-
     private static final String INGREDIENTS_IN_STASH_USER_URL = INGREDIENTS_IN_STASH_MAIN_URL + "/users/{userId}";
 
     @Autowired

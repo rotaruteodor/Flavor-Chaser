@@ -66,8 +66,6 @@ public class IngredientInStashService {
                             + ingredientInStash.getFlavor().getId()
                             + " WAS NOT FOUND"));
 
-        } else {
-            ingredientInStash.setFlavor(null); // TODO Do I need this?
         }
 
         usersRepository.findById(ingredientInStash.getUser().getId())

@@ -36,6 +36,12 @@ public class IngredientInStash {
     @Column(name = "current_quantity_in_ml")
     private Double currentQuantityInMl;
 
+    @Column(name = "used_quantity_in_ml")
+    private Double usedQuantityInMl;
+
+    @Column(name = "price_quantity_in_ml")
+    private Double priceQuantityInMl;
+
     @Column(name = "purchase_date")
     private LocalDate purchaseDate;
 

@@ -21,6 +21,8 @@ public class IngredientInStashDto {
     private String description;
     private FlavorDto flavor;
     private Double currentQuantityInMl;
+    private Double usedQuantityInMl;
+    private Double priceQuantityInMl;
     private LocalDate purchaseDate;
     private BigDecimal price;
     private UserDto user;
