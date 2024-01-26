@@ -6,11 +6,8 @@ import android.os.Parcelable;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
-import teodor.flavor_chaser_android_app.enums.MainIngredientType;
+import teodor.flavor_chaser_android_app.models.enums.MainIngredientType;
 
 
 @Data
@@ -21,8 +18,11 @@ public class IngredientInStash implements Parcelable {
     private String description;
     private Flavor flavor;
     private Double currentQuantityInMl;
+    private Double usedQuantityInMl;
+    private Double priceQuantityInMl;
     private LocalDate purchaseDate;
     private BigDecimal price;
+
 
     @Override
     public int describeContents() {
@@ -36,6 +36,8 @@ public class IngredientInStash implements Parcelable {
         dest.writeString(this.description);
         dest.writeParcelable(this.flavor, flags);
         dest.writeValue(this.currentQuantityInMl);
+        dest.writeValue(this.usedQuantityInMl);
+        dest.writeValue(this.priceQuantityInMl);
         dest.writeSerializable(this.purchaseDate);
         dest.writeSerializable(this.price);
     }
@@ -47,6 +49,8 @@ public class IngredientInStash implements Parcelable {
         this.description = source.readString();
         this.flavor = source.readParcelable(Flavor.class.getClassLoader());
         this.currentQuantityInMl = (Double) source.readValue(Double.class.getClassLoader());
+        this.usedQuantityInMl = (Double) source.readValue(Double.class.getClassLoader());
+        this.priceQuantityInMl = (Double) source.readValue(Double.class.getClassLoader());
         this.purchaseDate = (LocalDate) source.readSerializable();
         this.price = (BigDecimal) source.readSerializable();
     }
@@ -61,6 +65,8 @@ public class IngredientInStash implements Parcelable {
         this.description = in.readString();
         this.flavor = in.readParcelable(Flavor.class.getClassLoader());
         this.currentQuantityInMl = (Double) in.readValue(Double.class.getClassLoader());
+        this.usedQuantityInMl = (Double) in.readValue(Double.class.getClassLoader());
+        this.priceQuantityInMl = (Double) in.readValue(Double.class.getClassLoader());
         this.purchaseDate = (LocalDate) in.readSerializable();
         this.price = (BigDecimal) in.readSerializable();
     }

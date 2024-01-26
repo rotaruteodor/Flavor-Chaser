@@ -3,7 +3,6 @@ package teodor.flavor_chaser_android_app.fragments;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.InputFilter;
@@ -12,7 +11,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
@@ -25,14 +23,15 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.stream.Collectors;
 
 import teodor.flavor_chaser_android_app.R;
-import teodor.flavor_chaser_android_app.classes.RecipeIngredientResult;
+import teodor.flavor_chaser_android_app.fragments.utils.BaseInputsBundle;
+import teodor.flavor_chaser_android_app.fragments.utils.RecipeIngredientResult;
 import teodor.flavor_chaser_android_app.databinding.FragmentEliquidCalculatorBinding;
-import teodor.flavor_chaser_android_app.enums.MainIngredientType;
+import teodor.flavor_chaser_android_app.fragments.utils.RecipeInputsBundle;
+import teodor.flavor_chaser_android_app.models.enums.MainIngredientType;
 import teodor.flavor_chaser_android_app.fragments.utils.EliquidCalculatorHelper;
 import teodor.flavor_chaser_android_app.models.Flavor;
 import teodor.flavor_chaser_android_app.models.IngredientInStash;
@@ -49,7 +48,7 @@ public class EliquidCalculatorFragment extends Fragment {
 
     private ArrayList<Flavor> allFlavorsInDatabase;
     private ArrayList<IngredientInStash> ingredientsInStash;
-
+    private RecipeInputsBundle recipeInputsBundle;
 
     //todo replace cost with DB values
     //todo style?
@@ -76,6 +75,12 @@ public class EliquidCalculatorFragment extends Fragment {
     private void initializeNonGraphicalComponents() {
         allFlavorsInDatabase = getArguments().getParcelableArrayList(GeneralInfo.PASS_FLAVORS_MAINACTIVITY_TO_ELIQCALCFRAGMENT);
         ingredientsInStash = getArguments().getParcelableArrayList(GeneralInfo.PASS_INGREDIENTS_IN_STASH_MAINACTIVITY_TO_ELIQCALCFRAGMENT);
+        initializeRecipeInputsBundle();
+    }
+
+    private void initializeRecipeInputsBundle() {
+//                 TODO
+//        recipeInputsBundle = new RecipeInputsBundle();
     }
 
     @Override
@@ -214,7 +219,6 @@ public class EliquidCalculatorFragment extends Fragment {
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 try {
                     Double.valueOf(s.toString());
-                    //todo maybe treat case when desired nic strength is greater than nicshot strength?
                     displayRecipeResultsInTable();
                 } catch (Exception e) {
                     binding.textviewCalculateRecipeResultsError.setVisibility(View.VISIBLE);
@@ -479,7 +483,8 @@ public class EliquidCalculatorFragment extends Fragment {
                 finalNicotineStrength,
                 nicshotStrengthInMg,
                 getFlavorsPercentagesMap(),
-                totalFinalAmount);
+                totalFinalAmount,
+                ingredientsInStash);
     }
 
     private LinkedHashMap<String, Double> getFlavorsPercentagesMap() {
@@ -518,12 +523,9 @@ public class EliquidCalculatorFragment extends Fragment {
     }
 
     private void configureAutoCompleteTextViewFlavorName(View flavorRowInInputsView, AutoCompleteTextView autoCompleteTextViewFlavorName) {
-        Object[] flavorNamesAsObject = allFlavorsInDatabase.stream().map(Flavor::getName).toArray(); // TODO super slow?
-        String[] flavorNames = Arrays.copyOf(flavorNamesAsObject, flavorNamesAsObject.length, String[].class);
-        ArrayAdapter<String> stringArrayAdapter = new ArrayAdapter<>
-                (getContext(), android.R.layout.select_dialog_item, flavorNames);
-
-        autoCompleteTextViewFlavorName.setThreshold(2);
+        String[] flavorNames = allFlavorsInDatabase.stream().map(Flavor::getName).toArray(String[]::new); // TODO super slow?
+        ArrayAdapter<String> stringArrayAdapter = new ArrayAdapter<>(getContext(), android.R.layout.select_dialog_item, flavorNames);
+        autoCompleteTextViewFlavorName.setThreshold(3);
         autoCompleteTextViewFlavorName.setAdapter(stringArrayAdapter);
 
         autoCompleteTextViewFlavorName.addTextChangedListener(new TextWatcher() {
