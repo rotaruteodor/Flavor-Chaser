@@ -40,7 +40,7 @@ public class Flavor {
     @JoinColumn(name = "flavor_warning_id")
     private FlavorWarning warning;
 
-    @OneToMany(targetEntity = Rating.class, cascade = CascadeType.ALL)
+    @OneToMany(targetEntity = Rating.class)
     @JoinColumn(name = "flavor_id")
     private List<Rating> ratings;
 

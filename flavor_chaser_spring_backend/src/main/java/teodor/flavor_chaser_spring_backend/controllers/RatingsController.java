@@ -33,8 +33,8 @@ public class RatingsController {
         return ratingService.getById(id);
     }
 
-//    @PostMapping(RATINGS_MAIN_URL)
-//    public ResponseEntity<RatingDto> add(@RequestBody Rating rating) {
-//        return ratingService.add(rating);
-//    }
+    @PostMapping(RATINGS_MAIN_URL)
+    public ResponseEntity<RatingDto> add(@RequestBody Rating rating) {
+        return ratingService.add(rating);
+    }
 }

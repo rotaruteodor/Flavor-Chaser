@@ -65,7 +65,6 @@ public class IngredientInStashService {
                     }).orElseThrow(() -> new ResourceNotFoundException("Flavor with ID:"
                             + ingredientInStash.getFlavor().getId()
                             + " WAS NOT FOUND"));
-
         }
 
         usersRepository.findById(ingredientInStash.getUser().getId())
@@ -76,6 +75,7 @@ public class IngredientInStashService {
                         + ingredientInStash.getUser().getId()
                         + " WAS NOT FOUND"));
 
+        ingredientInStash.setUsedQuantityInMl(0d);
         ingredientsInStashRepository.save(ingredientInStash);
         return ResponseEntity.ok(ingredientInStashMapper.toDto(ingredientInStash));
     }

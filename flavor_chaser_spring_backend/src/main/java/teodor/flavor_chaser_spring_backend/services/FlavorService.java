@@ -85,7 +85,7 @@ public class FlavorService {
                 }).orElseThrow(() -> new ResourceNotFoundException("FlavorWarning with ID:"
                         + flavor.getWarning().getId()
                         + " WAS NOT FOUND"));
-
+//      TODO add ratings
         flavorsRepository.save(flavor);
         return ResponseEntity.ok(flavorMapper.toDto(flavor));
     }

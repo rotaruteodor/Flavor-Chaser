@@ -15,7 +15,7 @@ import java.util.List;
 @NoArgsConstructor
 @Builder
 public class FlavorCategoryDto {
-
+    // TODO Use enum instead?
     private Long id;
     private String name;
 //    private List<FlavorDto> flavors;

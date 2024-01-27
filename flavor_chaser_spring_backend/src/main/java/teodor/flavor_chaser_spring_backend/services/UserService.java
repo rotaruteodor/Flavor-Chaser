@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import teodor.flavor_chaser_spring_backend.dtos.UserDto;
+import teodor.flavor_chaser_spring_backend.entities.LiquidCalculatorPreferences;
 import teodor.flavor_chaser_spring_backend.entities.User;
 import teodor.flavor_chaser_spring_backend.exceptions.ErrorMessage;
 import teodor.flavor_chaser_spring_backend.exceptions.ResourceNotFoundException;
@@ -25,6 +26,10 @@ public class UserService {
     @Autowired
     private UserMapper userMapper;
 
+    @Autowired
+    private LiquidCalculatorPreferencesService liquidCalculatorPreferencesService;
+
+    private static final String NO_DESCRIPTION_TAG = "No";
     public List<UserDto> getAll() {
         return usersRepository.findAll()
                 .stream()
@@ -59,6 +64,23 @@ public class UserService {
 
     public ResponseEntity<UserDto> add(@RequestBody User user) {
         user.setCreationDate(LocalDateTime.now());
+        LiquidCalculatorPreferences preferences = LiquidCalculatorPreferences.builder()
+                .baseVgPercentage(0.7)
+                .basePgPercentage(0.3)
+                .baseDescription(NO_DESCRIPTION_TAG)
+                .withIndividualPgVg(false)
+                .vgDescription(NO_DESCRIPTION_TAG)
+                .pgDescription(NO_DESCRIPTION_TAG)
+                .nicshotVgPercentage(0.7)
+                .nicshotPgPercentage(0.3)
+                .nicshotStrengthInMg(20d)
+                .finalNicotineStrength(6d)
+                .nicshotDescription(NO_DESCRIPTION_TAG)
+                .totalFinalAmount(10d)
+                .build();
+
+        liquidCalculatorPreferencesService.add(preferences);
+        user.setLiquidCalculatorPreferences(preferences);
         usersRepository.save(user);
         return ResponseEntity.ok(userMapper.toDto(user));
     }

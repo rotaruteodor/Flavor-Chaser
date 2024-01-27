@@ -6,8 +6,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import teodor.flavor_chaser_spring_backend.dtos.RatingDto;
-import teodor.flavor_chaser_spring_backend.dtos.RecipeFlavorDto;
-import teodor.flavor_chaser_spring_backend.entities.RecipeFlavor;
+import teodor.flavor_chaser_spring_backend.entities.Rating;
 import teodor.flavor_chaser_spring_backend.exceptions.ErrorMessage;
 import teodor.flavor_chaser_spring_backend.exceptions.ResourceNotFoundException;
 import teodor.flavor_chaser_spring_backend.mappers.RatingMapper;
@@ -37,5 +36,10 @@ public class RatingService {
                 .map(ResponseEntity::ok)
                 .orElseThrow(() -> new ResourceNotFoundException(
                         ErrorMessage.getDoesNotExistErrorMessage("Rating", id)));
+    }
+
+    public ResponseEntity<RatingDto> add(@RequestBody Rating rating) {
+        ratingsRepository.save(rating);
+        return ResponseEntity.ok(ratingMapper.toDto(rating));
     }
 }
