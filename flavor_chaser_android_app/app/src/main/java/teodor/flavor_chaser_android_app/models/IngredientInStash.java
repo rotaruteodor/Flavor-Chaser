@@ -6,11 +6,13 @@ import android.os.Parcelable;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import teodor.flavor_chaser_android_app.models.enums.MainIngredientType;
 
 
 @Data
+@AllArgsConstructor
 public class IngredientInStash implements Parcelable {
 
     private Long id;
@@ -22,7 +24,42 @@ public class IngredientInStash implements Parcelable {
     private Double priceQuantityInMl;
     private LocalDate purchaseDate;
     private BigDecimal price;
+    private User user;
 
+
+    public IngredientInStash(MainIngredientType type,
+                             String description,
+                             Double currentQuantityInMl,
+                             Double priceQuantityInMl,
+                             LocalDate purchaseDate,
+                             BigDecimal price,
+                             User user) {
+        this.type = type;
+        this.description = description;
+        this.currentQuantityInMl = currentQuantityInMl;
+        this.priceQuantityInMl = priceQuantityInMl;
+        this.purchaseDate = purchaseDate;
+        this.price = price;
+        this.user = user;
+    }
+
+    public IngredientInStash(MainIngredientType type,
+                             String description,
+                             Flavor flavor,
+                             Double currentQuantityInMl,
+                             Double priceQuantityInMl,
+                             LocalDate purchaseDate,
+                             BigDecimal price,
+                             User user) {
+        this.type = type;
+        this.description = description;
+        this.flavor = flavor;
+        this.currentQuantityInMl = currentQuantityInMl;
+        this.priceQuantityInMl = priceQuantityInMl;
+        this.purchaseDate = purchaseDate;
+        this.price = price;
+        this.user = user;
+    }
 
     @Override
     public int describeContents() {
@@ -40,6 +77,7 @@ public class IngredientInStash implements Parcelable {
         dest.writeValue(this.priceQuantityInMl);
         dest.writeSerializable(this.purchaseDate);
         dest.writeSerializable(this.price);
+        dest.writeParcelable(this.user, flags);
     }
 
     public void readFromParcel(Parcel source) {
@@ -53,9 +91,7 @@ public class IngredientInStash implements Parcelable {
         this.priceQuantityInMl = (Double) source.readValue(Double.class.getClassLoader());
         this.purchaseDate = (LocalDate) source.readSerializable();
         this.price = (BigDecimal) source.readSerializable();
-    }
-
-    public IngredientInStash() {
+        this.user = source.readParcelable(User.class.getClassLoader());
     }
 
     protected IngredientInStash(Parcel in) {
@@ -69,6 +105,7 @@ public class IngredientInStash implements Parcelable {
         this.priceQuantityInMl = (Double) in.readValue(Double.class.getClassLoader());
         this.purchaseDate = (LocalDate) in.readSerializable();
         this.price = (BigDecimal) in.readSerializable();
+        this.user = in.readParcelable(User.class.getClassLoader());
     }
 
     public static final Parcelable.Creator<IngredientInStash> CREATOR = new Parcelable.Creator<IngredientInStash>() {

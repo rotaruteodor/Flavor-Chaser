@@ -2,7 +2,6 @@ package teodor.flavor_chaser_android_app.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
@@ -19,7 +18,8 @@ import java.util.ArrayList;
 
 import teodor.flavor_chaser_android_app.R;
 import teodor.flavor_chaser_android_app.databinding.ActivityMainBinding;
-import teodor.flavor_chaser_android_app.fragments.EliquidCalculatorFragment;
+import teodor.flavor_chaser_android_app.fragments.admin.AdminDatabaseFragment;
+import teodor.flavor_chaser_android_app.fragments.eliquid.EliquidCalculatorFragment;
 import teodor.flavor_chaser_android_app.models.Company;
 import teodor.flavor_chaser_android_app.models.Flavor;
 import teodor.flavor_chaser_android_app.models.FlavorCategory;
@@ -125,6 +125,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.flavorsMenuItem:
                 Toast.makeText(this, "flavors PRESSED", Toast.LENGTH_LONG).show();
                 break;
+            case R.id.adminDatabaseMenuItem:
+                setFragment(getAdminDatabaseFragment());
+                break;
         }
 
         binding.drawerLayout.closeDrawer(GravityCompat.START);
@@ -141,11 +144,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     public EliquidCalculatorFragment getEliquidCalculatorFragment() {
         Bundle bundle = new Bundle();
+        bundle.putParcelable(GeneralInfo.PASS_USER_FROM_MAIN_ACTIVITY_TO_ELIQCALCFRAGMENT, user);
         bundle.putParcelableArrayList(GeneralInfo.PASS_FLAVORS_MAINACTIVITY_TO_ELIQCALCFRAGMENT, flavors);
         bundle.putParcelableArrayList(GeneralInfo.PASS_INGREDIENTS_IN_STASH_MAINACTIVITY_TO_ELIQCALCFRAGMENT, ingredientsInStash);
         EliquidCalculatorFragment fragment = new EliquidCalculatorFragment();
         fragment.setArguments(bundle);
         return fragment;
     }
+
+    public AdminDatabaseFragment getAdminDatabaseFragment() {
+        Bundle bundle = new Bundle();
+        bundle.putParcelable(GeneralInfo.PASS_USER_FROM_MAIN_ACTIVITY_TO_ADMINDATABASEFRAGMENT, user);
+        AdminDatabaseFragment fragment = new AdminDatabaseFragment();
+        fragment.setArguments(bundle);
+        return fragment;
+    }
+
 
 }

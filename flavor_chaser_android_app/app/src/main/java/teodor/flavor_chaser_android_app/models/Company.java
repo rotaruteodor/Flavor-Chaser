@@ -15,6 +15,11 @@ public class Company implements Parcelable {
     private String name;
     private String website;
 
+    public Company(String name, String website) {
+        this.name = name;
+        this.website = website;
+    }
+
     @Override
     public int describeContents() {
         return 0;

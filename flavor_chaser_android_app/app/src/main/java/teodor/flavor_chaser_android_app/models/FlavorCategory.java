@@ -16,6 +16,10 @@ public class FlavorCategory implements Parcelable {
     private String name;
 //    private List<FlavorDto> flavors;
 
+    public FlavorCategory(String name) {
+        this.name = name;
+    }
+
     @Override
     public int describeContents() {
         return 0;

@@ -3,7 +3,10 @@ package teodor.flavor_chaser_android_app.retrofit.entities_apis;
 import java.util.List;
 
 import io.reactivex.rxjava3.core.Observable;
+import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 import teodor.flavor_chaser_android_app.models.Company;
 import teodor.flavor_chaser_android_app.utils.GeneralInfo;
 
@@ -14,4 +17,7 @@ public interface CompanyApi {
 
     @GET(COMPANIES_MAIN_URL)
     Observable<List<Company>> getAllCompanies();
+
+    @POST(COMPANIES_MAIN_URL)
+    Call<Company> addCompany(@Body Company company);
 }

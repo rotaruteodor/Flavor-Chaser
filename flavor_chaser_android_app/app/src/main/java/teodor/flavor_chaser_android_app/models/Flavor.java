@@ -14,6 +14,16 @@ public class Flavor implements Parcelable {
     private String name;
     private String description;
     private Company company;
+
+    public Flavor(String name, String description, Company company, FlavorCategory category, FlavorWarning warning, List<Rating> ratings) {
+        this.name = name;
+        this.description = description;
+        this.company = company;
+        this.category = category;
+        this.warning = warning;
+        this.ratings = ratings;
+    }
+
     private FlavorCategory category;
     private FlavorWarning warning;
     private List<Rating> ratings;
@@ -45,6 +55,10 @@ public class Flavor implements Parcelable {
     }
 
     public Flavor() {
+    }
+
+    public Flavor(Long id) {
+        this.id = id;
     }
 
     protected Flavor(Parcel in) {

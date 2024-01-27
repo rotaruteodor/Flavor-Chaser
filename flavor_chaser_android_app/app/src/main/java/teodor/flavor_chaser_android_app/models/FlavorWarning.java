@@ -34,6 +34,10 @@ public class FlavorWarning implements Parcelable {
     public FlavorWarning() {
     }
 
+    public FlavorWarning(String description) {
+        this.description = description;
+    }
+
     protected FlavorWarning(Parcel in) {
         this.id = (Long) in.readValue(Long.class.getClassLoader());
         this.description = in.readString();

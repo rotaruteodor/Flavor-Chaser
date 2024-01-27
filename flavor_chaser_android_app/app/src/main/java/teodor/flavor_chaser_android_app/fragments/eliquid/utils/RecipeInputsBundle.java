@@ -1,18 +1,15 @@
-package teodor.flavor_chaser_android_app.fragments.utils;
+package teodor.flavor_chaser_android_app.fragments.eliquid.utils;
 
 import java.util.ArrayList;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NonNull;
 
 @Data
+@AllArgsConstructor
 public class RecipeInputsBundle {
-    @NonNull
     private BaseInputsBundle base;
-    @NonNull
     private NicotineInputsBundle nicotine;
-    @NonNull
     private ArrayList<FlavorInputsBundle> flavors;
-    @NonNull
     private Double finalAmount;
 }

@@ -4,8 +4,6 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 
 import lombok.Data;
 
@@ -18,7 +16,7 @@ public class User implements Parcelable {
     private String emailAddress;
     private String password;
     private LocalDateTime creationDate;
-    private List<IngredientInStash> ingredientsInStash;
+    private LiquidCalculatorPreferences liquidCalculatorPreferences;
 
     @Override
     public int describeContents() {
@@ -27,38 +25,33 @@ public class User implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeLong(this.id);
+        dest.writeValue(this.id);
         dest.writeString(this.firstName);
         dest.writeString(this.lastName);
         dest.writeString(this.emailAddress);
         dest.writeString(this.password);
         dest.writeSerializable(this.creationDate);
-        dest.writeTypedList(this.ingredientsInStash);
+        dest.writeParcelable(this.liquidCalculatorPreferences, flags);
     }
 
     public void readFromParcel(Parcel source) {
-        this.id = source.readLong();
+        this.id = (Long) source.readValue(Long.class.getClassLoader());
         this.firstName = source.readString();
         this.lastName = source.readString();
         this.emailAddress = source.readString();
         this.password = source.readString();
         this.creationDate = (LocalDateTime) source.readSerializable();
-        this.ingredientsInStash = new ArrayList<>();
-        source.readTypedList(this.ingredientsInStash, IngredientInStash.CREATOR);
-    }
-
-    public User() {
+        this.liquidCalculatorPreferences = source.readParcelable(LiquidCalculatorPreferences.class.getClassLoader());
     }
 
     protected User(Parcel in) {
-        this.id = in.readLong();
+        this.id = (Long) in.readValue(Long.class.getClassLoader());
         this.firstName = in.readString();
         this.lastName = in.readString();
         this.emailAddress = in.readString();
         this.password = in.readString();
         this.creationDate = (LocalDateTime) in.readSerializable();
-        this.ingredientsInStash = new ArrayList<>();
-        in.readTypedList(this.ingredientsInStash, IngredientInStash.CREATOR);
+        this.liquidCalculatorPreferences = in.readParcelable(LiquidCalculatorPreferences.class.getClassLoader());
     }
 
     public static final Parcelable.Creator<User> CREATOR = new Parcelable.Creator<User>() {

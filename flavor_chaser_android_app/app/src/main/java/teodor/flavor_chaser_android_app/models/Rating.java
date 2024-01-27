@@ -14,6 +14,10 @@ public class Rating implements Parcelable {
     private Long id;
     private Float score;
 
+    public Rating(Float score) {
+        this.score = score;
+    }
+
     @Override
     public int describeContents() {
         return 0;

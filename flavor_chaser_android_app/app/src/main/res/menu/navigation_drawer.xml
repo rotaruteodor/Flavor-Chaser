@@ -43,4 +43,13 @@
         </menu>
     </item>
 
+    <item android:title="Administration">
+        <menu>
+            <item
+                android:id="@+id/adminDatabaseMenuItem"
+                android:icon="@drawable/ic_launcher_background"
+                android:title="Database" />
+        </menu>
+    </item>
+
 </menu>

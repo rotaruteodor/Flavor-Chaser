@@ -1,18 +1,16 @@
-package teodor.flavor_chaser_android_app.fragments.utils;
+package teodor.flavor_chaser_android_app.fragments.eliquid.utils;
 
+import java.math.BigDecimal;
+
+import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NonNull;
 
 @Data
+@AllArgsConstructor
 public class RecipeIngredientResult {
-    @NonNull
     private String ingredientName;
-    @NonNull
     private Double milliliters;
-    @NonNull
     private Double grams;
-    @NonNull
     private Double percentageOfTotal;
-    @NonNull
-    private Double cost;
+    private BigDecimal cost;
 }

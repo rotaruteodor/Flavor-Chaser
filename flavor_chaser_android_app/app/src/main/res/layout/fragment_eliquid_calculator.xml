@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/light_black"
-        tools:context=".fragments.EliquidCalculatorFragment">
+        tools:context=".fragments.eliquid.EliquidCalculatorFragment">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayoutCalculatorFragBase"
